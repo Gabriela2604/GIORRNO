@@ -1,3 +1,7 @@
+/* =========================
+   RESET E CONFIGURAÇÕES
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -35,43 +39,86 @@ a {
     color: inherit;
 }
 
+img {
+    max-width: 100%;
+}
+
 
 /* =========================
    HEADER
 ========================= */
 
 header {
-    background: #4b0909;
+    width: 100%;
+    background: var(--vinho);
+
     display: flex;
     align-items: center;
-    padding: 28px 9%;
-    color: white;
+
+    padding: 20px 9%;
+
+    color: var(--branco);
 }
 
+
+/* LOGO */
+
 .logo {
-    padding-right: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-right: 55px;
+
     border-right: 1px solid rgba(201, 163, 95, 0.5);
 }
 
+.logo img {
+    display: block;
+
+    width: 220px;
+    max-width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* CASO AINDA USE TEXTO EM ALGUMA PÁGINA */
+
 .logo h1 {
     font-family: "Bodoni Moda", serif;
+
     font-size: 52px;
     font-weight: 400;
+
     letter-spacing: 2px;
+
     color: var(--dourado);
+
     line-height: 1;
 }
+
+
+/* MENU */
 
 nav {
     display: flex;
     align-items: center;
+
     gap: 28px;
-    margin-left: 70px;
+
+    margin-left: 55px;
 }
 
 nav a {
     font-size: 10px;
-    transition: 0.3s;
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -85,41 +132,56 @@ nav a:hover {
 
 .hero {
     min-height: 560px;
+
     display: grid;
     grid-template-columns: 48% 52%;
+
     background: var(--vinho);
+
     overflow: hidden;
 }
 
 .hero-content {
     padding: 70px 16%;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: white;
+
+    color: var(--branco);
 }
 
 .hero-content h2 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 70px;
     font-weight: 400;
+
     color: var(--dourado);
+
     line-height: 0.9;
 }
 
 .hero-content h3 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 40px;
     font-weight: 400;
+
     color: #e8d8be;
+
     margin-bottom: 25px;
 }
 
 .hero-content p {
     font-size: 13px;
+
     line-height: 1.8;
+
     max-width: 360px;
+
     margin-bottom: 30px;
+
     color: #eaded5;
 }
 
@@ -149,12 +211,19 @@ nav a:hover {
 
 .btn {
     width: fit-content;
+
     padding: 15px 28px;
+
     border: 1px solid var(--dourado);
+
     color: var(--dourado);
+
     font-size: 10px;
     letter-spacing: 0.8px;
-    transition: 0.3s;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .btn:hover {
@@ -169,12 +238,14 @@ nav a:hover {
 
 .collections {
     padding: 100px 9% 110px;
+
     background: var(--creme);
 }
 
 .section-header {
     display: flex;
     justify-content: center;
+
     margin-bottom: 55px;
 }
 
@@ -184,20 +255,26 @@ nav a:hover {
 
 .section-title h2 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 52px;
     font-weight: 400;
+
     letter-spacing: 1px;
 }
 
 
-/* GRID */
+/* GRID DE COLEÇÕES */
 
 .collection-grid {
     display: grid;
+
     grid-template-columns: repeat(5, minmax(0, 1fr));
+
     gap: 20px;
+
     width: 100%;
     max-width: 1800px;
+
     margin: 0 auto;
 }
 
@@ -206,8 +283,11 @@ nav a:hover {
 
 .collection-card {
     display: block;
+
     min-width: 0;
+
     overflow: hidden;
+
     background: #f8f3ed;
 
     transition:
@@ -215,21 +295,27 @@ nav a:hover {
         box-shadow 0.3s ease;
 }
 
+.collection-card:hover {
+    transform: translateY(-5px);
 
-/* CONTAINER DA IMAGEM */
-
-.collection-image {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(60, 40, 30, 0.10);
 }
 
 
 /* IMAGEM */
 
+.collection-image {
+    width: 100%;
+
+    aspect-ratio: 3 / 4;
+
+    overflow: hidden;
+}
+
 .collection-image img {
     width: 100%;
     height: 100%;
+
     display: block;
 
     object-fit: cover;
@@ -238,105 +324,133 @@ nav a:hover {
     transition: transform 0.6s ease;
 }
 
-
-/* HOVER */
-
-.collection-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(60, 40, 30, 0.10);
-}
-
 .collection-card:hover .collection-image img {
     transform: scale(1.03);
 }
 
 
-/* TEXTO */
+/* INFORMAÇÕES */
 
 .collection-info {
     background: #f8f3ed;
+
     text-align: center;
+
     padding: 25px 15px 28px;
+
     border-top: 1px solid rgba(139, 100, 70, 0.12);
 }
 
 .collection-info h3 {
     font-size: 11px;
     font-weight: 500;
+
     letter-spacing: 1.5px;
+
     margin-bottom: 12px;
 }
 
 .collection-info span {
     font-size: 9px;
+
     color: #8b7060;
 }
 
 
 /* =========================
-   PÁGINAS DE PRODUTO (CATÁLOGO)
-   usado em aneis.html, colares.html,
-   brincos.html, pulseiras.html, conjuntos.html
+   CATÁLOGO DE PRODUTOS
 ========================= */
 
 .catalog-header {
     padding: 90px 9% 55px;
+
     text-align: center;
+
     background: var(--creme);
 }
 
 .catalog-header p {
     font-size: 11px;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
+
     color: var(--vinho);
+
     margin-bottom: 10px;
 }
 
 .catalog-header h2 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 56px;
     font-weight: 400;
+
     letter-spacing: 2px;
+
     color: var(--texto);
+
     line-height: 1;
 }
 
 .catalog-header span {
     display: block;
+
     width: 60px;
     height: 2px;
+
     background: var(--dourado);
+
     margin: 24px auto 0;
 }
 
 .catalog-description {
     max-width: 480px;
+
     margin: 22px auto 0;
+
     font-size: 13px;
     line-height: 1.9;
+
     color: #675b55;
 }
 
+
+/* GRID DE PRODUTOS */
+
 .catalog {
     padding: 0 9% 110px;
+
     background: var(--creme);
 }
 
 .product-grid {
     display: grid;
+
     grid-template-columns: repeat(4, minmax(0, 1fr));
+
     gap: 25px;
+
     width: 100%;
     max-width: 1800px;
+
     margin: 0 auto;
 }
 
+
+/* CARD DO PRODUTO */
+
 .product-card {
     display: block;
+
     min-width: 0;
+
     overflow: hidden;
+
     background: #f8f3ed;
+
+    cursor: pointer;
 
     transition:
         transform 0.3s ease,
@@ -345,18 +459,25 @@ nav a:hover {
 
 .product-card:hover {
     transform: translateY(-5px);
+
     box-shadow: 0 15px 40px rgba(60, 40, 30, 0.10);
 }
 
+
+/* IMAGEM */
+
 .product-image {
     width: 100%;
+
     aspect-ratio: 3 / 4;
+
     overflow: hidden;
 }
 
 .product-image img {
     width: 100%;
     height: 100%;
+
     display: block;
 
     object-fit: cover;
@@ -369,33 +490,49 @@ nav a:hover {
     transform: scale(1.03);
 }
 
+
+/* INFORMAÇÕES */
+
 .product-details {
     background: #f8f3ed;
+
     text-align: center;
+
     padding: 20px 12px 24px;
+
     border-top: 1px solid rgba(139, 100, 70, 0.12);
 }
 
 .product-details h3 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 17px;
     font-weight: 500;
+
     color: var(--texto);
+
     margin-bottom: 8px;
+
     letter-spacing: 0.5px;
 }
 
 .product-code {
     font-size: 10px;
+
     letter-spacing: 1px;
+
     color: #8b7060;
+
     margin-bottom: 8px;
 }
 
 .price {
     font-size: 13px;
+
     font-weight: 600;
+
     letter-spacing: 0.5px;
+
     color: var(--vinho);
 }
 
@@ -432,49 +569,71 @@ nav a:hover {
 
 .about-desktop .about-content {
     width: 50%;
+
     margin-left: auto;
+
     padding: 80px 10% 80px 6%;
 }
 
 .about-desktop h2 {
     font-family: "Cormorant Garamond", serif;
+
     font-size: 62px;
     font-weight: 400;
+
     line-height: 0.9;
+
     color: var(--texto);
+
     margin-bottom: 35px;
 }
 
 .about-desktop p {
     max-width: 500px;
+
     font-size: 13px;
+
     line-height: 2;
+
     color: #675b55;
+
     margin-bottom: 18px;
 }
 
 .about-desktop strong {
     color: var(--vinho);
+
     font-weight: 600;
 }
 
+
+/* AVISO */
+
 .warranty-warning {
     margin-top: 30px;
+
     padding: 22px 25px;
+
     border-left: 2px solid var(--dourado);
+
     background: rgba(255, 255, 255, 0.25);
 }
 
 .warranty-warning h4 {
     font-size: 11px;
+
     letter-spacing: 1.5px;
+
     color: var(--vinho);
+
     margin-bottom: 12px;
 }
 
 .warranty-warning p {
     margin-bottom: 0;
+
     font-size: 11px;
+
     line-height: 1.8;
 }
 
@@ -494,12 +653,15 @@ nav a:hover {
 
 footer {
     background: var(--vinho);
-    color: white;
+
+    color: var(--branco);
+
     padding: 45px 10%;
 }
 
 .footer-content {
     max-width: 1000px;
+
     margin: 0 auto;
 
     display: flex;
@@ -509,35 +671,287 @@ footer {
     gap: 55px;
 }
 
-.footer-logo h2 {
-    font-family: "Cormorant Garamond", serif;
-    color: var(--dourado);
-    font-size: 52px;
-    font-weight: 400;
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    display: block;
+    width: 130px;
+    height: auto;
+    max-width: 100%;
 }
 
 .footer-divider {
     width: 1px;
     height: 55px;
+
     background: rgba(201, 163, 95, 0.45);
 }
 
 .contact {
     display: flex;
     flex-direction: column;
+
     gap: 8px;
 }
 
 .contact h3 {
     font-family: "Cormorant Garamond", serif;
+
     color: #ead8c0;
+
     font-size: 24px;
+
     font-weight: 500;
 }
 
 .contact p {
     color: #d9c7c0;
+
     font-size: 12px;
+}
+
+
+/* =========================
+   MODAL DE PRODUTO
+========================= */
+
+.product-modal {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+
+    z-index: 1000;
+}
+
+.product-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* FUNDO */
+
+.modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(35, 10, 10, 0.72);
+
+    backdrop-filter: blur(4px);
+}
+
+
+/* CONTEÚDO */
+
+.modal-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(900px, 100%);
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: var(--creme);
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+
+    transform: translateY(25px);
+
+    transition: transform 0.4s ease;
+}
+
+.product-modal.active .modal-content {
+    transform: translateY(0);
+}
+
+
+/* IMAGEM DO MODAL */
+
+.modal-image {
+    min-height: 520px;
+
+    overflow: hidden;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* INFORMAÇÕES */
+
+.modal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 60px 55px;
+
+    text-align: center;
+}
+
+.modal-category {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--vinho);
+
+    margin-bottom: 15px;
+}
+
+.modal-info h2 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 48px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    color: var(--texto);
+
+    margin-bottom: 18px;
+}
+
+.modal-ref {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    color: #8b7060;
+
+    margin-bottom: 12px;
+}
+
+.modal-price {
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: var(--vinho);
+}
+
+
+/* DIVISÓRIA */
+
+.modal-divider {
+    width: 55px;
+    height: 1px;
+
+    background: var(--dourado);
+
+    margin: 30px auto;
+}
+
+
+/* DESCRIÇÃO */
+
+.modal-description {
+    max-width: 280px;
+
+    margin: 0 auto 35px;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    color: #675b55;
+}
+
+
+/* BOTÃO */
+
+.interest-button {
+    align-self: center;
+
+    padding: 16px 28px;
+
+    background: transparent;
+
+    border: 1px solid var(--dourado);
+
+    color: var(--vinho);
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.interest-button:hover {
+    background: var(--vinho);
+
+    border-color: var(--vinho);
+
+    color: var(--dourado);
+}
+
+
+/* FECHAR MODAL */
+
+.modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    z-index: 5;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--vinho);
+
+    font-size: 30px;
+
+    font-weight: 300;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--dourado);
+
+    transform: rotate(90deg);
 }
 
 
@@ -547,21 +961,47 @@ footer {
 
 @media (max-width: 1024px) {
 
+    /* HEADER */
+
     header {
-        padding: 22px 5%;
+        padding: 18px 5%;
     }
 
     .logo {
-        padding-right: 35px;
+        padding-right: 30px;
+    }
+
+    .logo img {
+        width: 180px;
     }
 
     nav {
-        margin-left: 35px;
-        gap: 18px;
+        margin-left: 30px;
+
+        gap: 16px;
+    }
+
+    nav a {
+        font-size: 9px;
     }
 
 
-    /* COLEÇÕES - 3 COLUNAS */
+    /* HERO */
+
+    .hero-content {
+        padding: 60px 10%;
+    }
+
+    .hero-content h2 {
+        font-size: 60px;
+    }
+
+    .hero-content h3 {
+        font-size: 35px;
+    }
+
+
+    /* COLEÇÕES */
 
     .collections {
         padding: 80px 6%;
@@ -569,15 +1009,12 @@ footer {
 
     .collection-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+
         gap: 18px;
     }
 
-    .collection-image {
-        aspect-ratio: 3 / 4;
-    }
 
-
-    /* CATÁLOGO DE PRODUTOS - 3 COLUNAS */
+    /* CATÁLOGO */
 
     .catalog-header {
         padding: 70px 6% 40px;
@@ -593,9 +1030,12 @@ footer {
 
     .product-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+
         gap: 18px;
     }
 
+
+    /* GARANTIA */
 
     .about-desktop .about-content {
         width: 55%;
@@ -617,29 +1057,44 @@ footer {
 
     header {
         flex-direction: column;
-        padding: 25px 5%;
+
+        padding: 22px 5%;
+
         gap: 20px;
     }
 
     .logo {
         padding-right: 0;
+
         border-right: none;
+    }
+
+    .logo img {
+        width: 200px;
     }
 
     nav {
         margin-left: 0;
+
         flex-wrap: wrap;
+
         justify-content: center;
-        gap: 15px 20px;
+
+        gap: 14px 20px;
+    }
+
+    nav a {
+        font-size: 9px;
     }
 
 
-    /* HERO MOBILE */
+    /* HERO */
 
     .hero {
         position: relative;
 
         display: flex;
+
         align-items: center;
         justify-content: center;
 
@@ -665,6 +1120,7 @@ footer {
 
     .hero-content {
         width: 100%;
+
         min-height: 620px;
 
         padding: 70px 10%;
@@ -684,18 +1140,22 @@ footer {
 
     .hero-content h3 {
         font-size: 32px;
+
         margin-bottom: 30px;
     }
 
     .hero-content p {
         max-width: 320px;
+
         font-size: 12px;
+
         line-height: 1.9;
+
         margin-bottom: 32px;
     }
 
 
-    /* COLEÇÕES - 2 COLUNAS */
+    /* COLEÇÕES */
 
     .collections {
         padding: 70px 8%;
@@ -707,11 +1167,8 @@ footer {
 
     .collection-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 15px;
-    }
 
-    .collection-image {
-        aspect-ratio: 3 / 4;
+        gap: 15px;
     }
 
     .collection-info {
@@ -720,6 +1177,7 @@ footer {
 
     .collection-info h3 {
         font-size: 10px;
+
         letter-spacing: 1px;
     }
 
@@ -728,7 +1186,7 @@ footer {
     }
 
 
-    /* CATÁLOGO DE PRODUTOS - 2 COLUNAS */
+    /* CATÁLOGO */
 
     .catalog-header {
         padding: 60px 8% 35px;
@@ -747,8 +1205,9 @@ footer {
     }
 
     .catalog-description {
-        font-size: 12px;
         max-width: 300px;
+
+        font-size: 12px;
     }
 
     .catalog {
@@ -757,6 +1216,7 @@ footer {
 
     .product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
         gap: 15px;
     }
 
@@ -787,9 +1247,9 @@ footer {
     /* GARANTIA MOBILE */
 
     .warranty-mobile {
-        display: flex;
-
         position: relative;
+
+        display: flex;
 
         min-height: 680px;
 
@@ -808,6 +1268,7 @@ footer {
 
     .mobile-warranty-overlay {
         position: absolute;
+
         inset: 0;
 
         background:
@@ -822,12 +1283,15 @@ footer {
 
     .mobile-warranty-content {
         position: relative;
+
         z-index: 2;
 
         width: 100%;
+
         padding: 55px 9%;
 
-        color: white;
+        color: var(--branco);
+
         text-align: center;
     }
 
@@ -838,17 +1302,21 @@ footer {
     .mobile-warranty-title h2,
     .mobile-warranty-title h3 {
         font-family: "Cormorant Garamond", serif;
+
         font-weight: 400;
+
         line-height: 0.9;
     }
 
     .mobile-warranty-title h2 {
         font-size: 55px;
+
         color: var(--dourado);
     }
 
     .mobile-warranty-title h3 {
         font-size: 45px;
+
         color: #f1dfc7;
     }
 
@@ -857,17 +1325,21 @@ footer {
 
     .carousel {
         width: 100%;
+
         overflow: hidden;
     }
 
     .carousel-track {
         display: flex;
+
         width: 400%;
+
         transition: transform 0.5s ease;
     }
 
     .carousel-slide {
         width: 25%;
+
         flex-shrink: 0;
 
         min-height: 270px;
@@ -885,9 +1357,11 @@ footer {
         font-family: "Cormorant Garamond", serif;
 
         font-size: 20px;
+
         color: var(--dourado);
 
         letter-spacing: 3px;
+
         margin-bottom: 18px;
     }
 
@@ -895,6 +1369,7 @@ footer {
         font-size: 11px;
 
         font-weight: 500;
+
         letter-spacing: 2px;
 
         color: var(--dourado);
@@ -906,6 +1381,7 @@ footer {
         max-width: 310px;
 
         font-size: 13px;
+
         line-height: 2;
 
         color: #f3e7df;
@@ -913,6 +1389,7 @@ footer {
 
     .carousel-slide strong {
         color: var(--dourado-claro);
+
         font-weight: 600;
     }
 
@@ -930,16 +1407,19 @@ footer {
         justify-content: center;
 
         gap: 20px;
+
         margin-top: 20px;
     }
 
     .carousel-btn {
         background: transparent;
+
         border: none;
 
         color: var(--dourado);
 
         font-size: 24px;
+
         cursor: pointer;
 
         padding: 8px;
@@ -947,6 +1427,7 @@ footer {
 
     .carousel-dots {
         display: flex;
+
         gap: 10px;
     }
 
@@ -961,6 +1442,7 @@ footer {
         background: transparent;
 
         padding: 0;
+
         cursor: pointer;
 
         transition: 0.3s;
@@ -968,7 +1450,39 @@ footer {
 
     .dot.active {
         background: var(--dourado);
+
         transform: scale(1.3);
+    }
+
+
+    /* MODAL */
+
+    .product-modal {
+        padding: 15px;
+    }
+
+    .modal-content {
+        grid-template-columns: 1fr;
+
+        max-width: 430px;
+
+        max-height: 90vh;
+
+        overflow-y: auto;
+    }
+
+    .modal-image {
+        min-height: 350px;
+
+        max-height: 45vh;
+    }
+
+    .modal-info {
+        padding: 40px 30px;
+    }
+
+    .modal-info h2 {
+        font-size: 38px;
     }
 
 
@@ -976,7 +1490,9 @@ footer {
 
     .footer-content {
         flex-direction: column;
+
         gap: 25px;
+
         text-align: center;
     }
 
@@ -992,6 +1508,16 @@ footer {
 ========================= */
 
 @media (max-width: 480px) {
+
+    /* HEADER */
+
+    header {
+        padding: 20px 5%;
+    }
+
+    .logo img {
+        width: 180px;
+    }
 
     nav {
         gap: 12px 15px;
@@ -1010,6 +1536,7 @@ footer {
 
     .hero-content {
         min-height: 590px;
+
         padding: 60px 8%;
     }
 
@@ -1023,11 +1550,12 @@ footer {
 
     .hero-content p {
         max-width: 290px;
+
         font-size: 11px;
     }
 
 
-    /* COLEÇÕES - 1 COLUNA */
+    /* COLEÇÕES */
 
     .collections {
         padding: 60px 7%;
@@ -1039,6 +1567,7 @@ footer {
 
     .collection-grid {
         grid-template-columns: 1fr;
+
         gap: 22px;
     }
 
@@ -1046,20 +1575,16 @@ footer {
         width: 100%;
     }
 
-
-    /*
-       IMAGEM SEM ALTURA FIXA.
-       O CONTAINER CONTROLA A PROPORÇÃO.
-    */
-
     .collection-image {
         width: 100%;
+
         aspect-ratio: 3 / 4;
     }
 
     .collection-image img {
         width: 100%;
         height: 100%;
+
         object-fit: cover;
     }
 
@@ -1076,7 +1601,7 @@ footer {
     }
 
 
-    /* CATÁLOGO DE PRODUTOS - 1 COLUNA */
+    /* CATÁLOGO */
 
     .catalog-header {
         padding: 50px 7% 30px;
@@ -1092,6 +1617,7 @@ footer {
 
     .product-grid {
         grid-template-columns: 1fr;
+
         gap: 22px;
     }
 
@@ -1101,6 +1627,7 @@ footer {
 
     .product-image {
         width: 100%;
+
         aspect-ratio: 3 / 4;
     }
 
@@ -1145,6 +1672,7 @@ footer {
 
     .carousel-slide {
         min-height: 250px;
+
         padding: 10px 15px;
     }
 
@@ -1155,208 +1683,29 @@ footer {
     .carousel-slide p {
         font-size: 12px;
     }
-}
 
-/* =========================
-MODAL DE PRODUTO
-========================= */
 
-.product-card {
-cursor: pointer;
-}
+    /* MODAL */
 
-/* MODAL */
+    .modal-image {
+        min-height: 300px;
+    }
 
-.product-modal {
-position: fixed;
-inset: 0;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 30px;
-opacity: 0;
-visibility: hidden;
-transition:
-    opacity 0.35s ease,
-    visibility 0.35s ease;
-z-index: 1000;
-}
+    .modal-info {
+        padding: 35px 20px;
+    }
 
-.product-modal.active {
-opacity: 1;
-visibility: visible;
-}
+    .modal-info h2 {
+        font-size: 34px;
+    }
 
-/* FUNDO */
+    .modal-description {
+        font-size: 11px;
+    }
 
-.modal-overlay {
-position: absolute;
-inset: 0;
-background: rgba(35, 10, 10, 0.72);
-backdrop-filter: blur(4px);
-}
+    .interest-button {
+        font-size: 9px;
 
-/* CONTEÚDO DO MODAL */
-
-.modal-content {
-position: relative;
-z-index: 2;
-width: min(900px, 100%);
-display: grid;
-grid-template-columns: 1fr 1fr;
-background: var(--creme);
-box-shadow:0 30px 80px rgba(0, 0, 0, 0.35);
-transform: translateY(25px);
-transition: transform 0.4s ease;
-}
-
-.product-modal.active .modal-content {
-transform: translateY(0);
-}
-
-/* IMAGEM */
-
-.modal-image {
-min-height: 520px;
-overflow: hidden;
-}
-
-.modal-image img {
-width: 100%;
-height: 100%;
-display: block;
-object-fit: cover;
-}
-
-/* INFORMAÇÕES */
-
-.modal-info {
-display: flex;
-flex-direction: column;
-justify-content: center;
-padding: 60px 55px;
-text-align: center;
-}
-
-.modal-category {
-font-size: 9px;
-letter-spacing: 3px;
-color: var(--vinho);
-margin-bottom: 15px;
-}
-
-.modal-info h2 {
-font-family: "Cormorant Garamond", serif;
-font-size: 48px;
-font-weight: 400;
-letter-spacing: 2px;
-color: var(--texto);
-margin-bottom: 18px;
-}
-
-.modal-ref {
-font-size: 10px;
-letter-spacing: 1.5px;
-color: #8b7060;
-margin-bottom: 12px;
-}
-
-.modal-price {
-font-size: 16px;
-font-weight: 600;
-color: var(--vinho);
-}
-
-/* DIVISÓRIA */
-
-.modal-divider {
-width: 55px;
-height: 1px;
-background: var(--dourado);
-margin: 30px auto;
-}
-
-/* DESCRIÇÃO */
-
-.modal-description {
-font-size: 12px;
-line-height: 1.8;
-color: #675b55;
-max-width: 280px;
-margin: 0 auto 35px;
-}
-
-/* BOTÃO */
-
-.interest-button {
-align-self: center;
-padding: 16px 28px;
-background: transparent;
-border: 1px solid var(--dourado);
-color: var(--vinho);
-font-family: "Montserrat", sans-serif;
-font-size: 10px;
-font-weight: 500;
-letter-spacing: 1.5px;
-cursor: pointer;
-transition: 0.3s ease;
-}
-
-.interest-button:hover {
-background: var(--vinho);
-border-color: var(--vinho);
-color: var(--dourado);
-}
-
-/* BOTÃO DE FECHAR */
-
-.modal-close {
-position: absolute;
-top: 15px;
-right: 18px;
-z-index: 5;
-width: 38px;
-height: 38px;
-border: none;
-background: transparent;
-color: var(--vinho);
-font-size: 30px;
-font-weight: 300;
-cursor: pointer;
-transition: 0.3s ease;
-}
-
-.modal-close:hover {
-color: var(--dourado);
-transform: rotate(90deg);
-}
-
-/* RESPONSIVIDADE */
-
-@media (max-width: 768px) {
-
-.product-modal {
-    padding: 15px;
-}
-
-.modal-content {
-    grid-template-columns: 1fr;
-    max-width: 430px;
-    max-height: 90vh;
-    overflow-y: auto;
-}
-
-.modal-image {
-    min-height: 350px;
-    max-height: 45vh;
-}
-
-.modal-info {
-    padding: 40px 30px;
-}
-
-.modal-info h2 {
-    font-size: 38px;
-}
-
+        padding: 14px 20px;
+    }
 }
