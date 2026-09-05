@@ -1156,3 +1156,207 @@ footer {
         font-size: 12px;
     }
 }
+
+/* =========================
+MODAL DE PRODUTO
+========================= */
+
+.product-card {
+cursor: pointer;
+}
+
+/* MODAL */
+
+.product-modal {
+position: fixed;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 30px;
+opacity: 0;
+visibility: hidden;
+transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+z-index: 1000;
+}
+
+.product-modal.active {
+opacity: 1;
+visibility: visible;
+}
+
+/* FUNDO */
+
+.modal-overlay {
+position: absolute;
+inset: 0;
+background: rgba(35, 10, 10, 0.72);
+backdrop-filter: blur(4px);
+}
+
+/* CONTEÚDO DO MODAL */
+
+.modal-content {
+position: relative;
+z-index: 2;
+width: min(900px, 100%);
+display: grid;
+grid-template-columns: 1fr 1fr;
+background: var(--creme);
+box-shadow:0 30px 80px rgba(0, 0, 0, 0.35);
+transform: translateY(25px);
+transition: transform 0.4s ease;
+}
+
+.product-modal.active .modal-content {
+transform: translateY(0);
+}
+
+/* IMAGEM */
+
+.modal-image {
+min-height: 520px;
+overflow: hidden;
+}
+
+.modal-image img {
+width: 100%;
+height: 100%;
+display: block;
+object-fit: cover;
+}
+
+/* INFORMAÇÕES */
+
+.modal-info {
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 60px 55px;
+text-align: center;
+}
+
+.modal-category {
+font-size: 9px;
+letter-spacing: 3px;
+color: var(--vinho);
+margin-bottom: 15px;
+}
+
+.modal-info h2 {
+font-family: "Cormorant Garamond", serif;
+font-size: 48px;
+font-weight: 400;
+letter-spacing: 2px;
+color: var(--texto);
+margin-bottom: 18px;
+}
+
+.modal-ref {
+font-size: 10px;
+letter-spacing: 1.5px;
+color: #8b7060;
+margin-bottom: 12px;
+}
+
+.modal-price {
+font-size: 16px;
+font-weight: 600;
+color: var(--vinho);
+}
+
+/* DIVISÓRIA */
+
+.modal-divider {
+width: 55px;
+height: 1px;
+background: var(--dourado);
+margin: 30px auto;
+}
+
+/* DESCRIÇÃO */
+
+.modal-description {
+font-size: 12px;
+line-height: 1.8;
+color: #675b55;
+max-width: 280px;
+margin: 0 auto 35px;
+}
+
+/* BOTÃO */
+
+.interest-button {
+align-self: center;
+padding: 16px 28px;
+background: transparent;
+border: 1px solid var(--dourado);
+color: var(--vinho);
+font-family: "Montserrat", sans-serif;
+font-size: 10px;
+font-weight: 500;
+letter-spacing: 1.5px;
+cursor: pointer;
+transition: 0.3s ease;
+}
+
+.interest-button:hover {
+background: var(--vinho);
+border-color: var(--vinho);
+color: var(--dourado);
+}
+
+/* BOTÃO DE FECHAR */
+
+.modal-close {
+position: absolute;
+top: 15px;
+right: 18px;
+z-index: 5;
+width: 38px;
+height: 38px;
+border: none;
+background: transparent;
+color: var(--vinho);
+font-size: 30px;
+font-weight: 300;
+cursor: pointer;
+transition: 0.3s ease;
+}
+
+.modal-close:hover {
+color: var(--dourado);
+transform: rotate(90deg);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+.product-modal {
+    padding: 15px;
+}
+
+.modal-content {
+    grid-template-columns: 1fr;
+    max-width: 430px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-image {
+    min-height: 350px;
+    max-height: 45vh;
+}
+
+.modal-info {
+    padding: 40px 30px;
+}
+
+.modal-info h2 {
+    font-size: 38px;
+}
+
+}

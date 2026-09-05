@@ -1,137 +1,124 @@
-document.addEventListener("DOMContentLoaded", () => {
+const cards = document.querySelectorAll(".product-card");
 
-    const track = document.querySelector(".carousel-track");
-    const slides = document.querySelectorAll(".carousel-slide");
-    const dots = document.querySelectorAll(".dot");
+const modal = document.getElementById("productModal");
+const closeModal = document.getElementById("modalClose");
+const overlay = document.querySelector(".modal-overlay");
 
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
+const modalImage = document.getElementById("modalProductImage");
+const modalName = document.getElementById("modalProductName");
+const modalRef = document.getElementById("modalProductRef");
+const modalPrice = document.getElementById("modalProductPrice");
 
-    let currentSlide = 0;
-    let startX = 0;
-    let endX = 0;
+const interestButton = document.getElementById("interestButton");
 
+let selectedProduct = {};
 
-    function updateCarousel() {
+/* =========================
+ABRIR MODAL
+========================= */
 
-        track.style.transform =
-            `translateX(-${currentSlide * 25}%)`;
-
-        dots.forEach((dot, index) => {
-
-            dot.classList.toggle(
-                "active",
-                index === currentSlide
-            );
-
-        });
-
-    }
+cards.forEach((card) => {
 
 
-    function nextSlide() {
+card.addEventListener("click", () => {
 
-        currentSlide++;
-
-        if (currentSlide >= slides.length) {
-            currentSlide = 0;
-        }
-
-        updateCarousel();
-
-    }
+    selectedProduct = {
+        name: card.dataset.name,
+        ref: card.dataset.ref,
+        price: card.dataset.price,
+        image: card.dataset.image
+    };
 
 
-    function prevSlide() {
+    modalImage.src = selectedProduct.image;
 
-        currentSlide--;
-
-        if (currentSlide < 0) {
-            currentSlide = slides.length - 1;
-        }
-
-        updateCarousel();
-
-    }
+    modalImage.alt =
+        `${selectedProduct.name} GIORNNO Ref. ${selectedProduct.ref}`;
 
 
-    if (nextButton) {
-
-        nextButton.addEventListener(
-            "click",
-            nextSlide
-        );
-
-    }
+    modalName.textContent =
+        selectedProduct.name.toUpperCase();
 
 
-    if (prevButton) {
-
-        prevButton.addEventListener(
-            "click",
-            prevSlide
-        );
-
-    }
+    modalRef.textContent =
+        `Ref. ${selectedProduct.ref}`;
 
 
-    dots.forEach((dot, index) => {
-
-        dot.addEventListener("click", () => {
-
-            currentSlide = index;
-
-            updateCarousel();
-
-        });
-
-    });
+    modalPrice.textContent =
+        selectedProduct.price;
 
 
-    /* SWIPE NO CELULAR */
+    modal.classList.add("active");
 
-    if (track) {
+    document.body.style.overflow = "hidden";
 
-        track.addEventListener(
-            "touchstart",
-            (event) => {
-
-                startX =
-                    event.touches[0].clientX;
-
-            },
-            { passive: true }
-        );
+});
 
 
-        track.addEventListener(
-            "touchend",
-            (event) => {
+});
 
-                endX =
-                    event.changedTouches[0].clientX;
+/* =========================
+FECHAR MODAL
+========================= */
 
-                const difference =
-                    startX - endX;
+function fecharModal() {
 
 
-                if (difference > 50) {
+modal.classList.remove("active");
 
-                    nextSlide();
+document.body.style.overflow = "";
 
-                }
+}
+
+closeModal.addEventListener("click", fecharModal);
+
+overlay.addEventListener("click", fecharModal);
+
+/* FECHAR COM ESC */
+
+document.addEventListener("keydown", (event) => {
 
 
-                if (difference < -50) {
+if (
+    event.key === "Escape" &&
+    modal.classList.contains("active")
+) {
 
-                    prevSlide();
+    fecharModal();
 
-                }
+}
 
-            },
-            { passive: true }
-        );
+});
 
-    }
+/* =========================
+   WHATSAPP
+========================= */
+
+interestButton.addEventListener("click", () => {
+
+    const numeroWhatsApp = "5541991945815";
+
+    // Gera o link completo da imagem do produto
+    const linkImagem = new URL(
+        selectedProduct.image,
+        window.location.href
+    ).href;
+
+    const mensagem = `Olá! 👋
+
+Tenho interesse neste produto da GIORNNO Joias:
+
+✨ ${selectedProduct.name} - Ref. ${selectedProduct.ref}
+💰 ${selectedProduct.price}
+
+📷 Foto do produto:
+${linkImagem}
+
+Gostaria de receber mais informações sobre esta peça. 💎`;
+
+    const url =
+        `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+    window.open(url, "_blank");
 
 });
