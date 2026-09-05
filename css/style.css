@@ -1709,3 +1709,75 @@ footer {
         padding: 14px 20px;
     }
 }
+
+/* =========================
+   PRODUTO INDISPONÍVEL
+========================= */
+
+/* Produto vendido vai para o final da grade */
+
+.product-card.sold {
+    order: 999;
+}
+
+
+/* Escurece a imagem */
+
+.product-card.sold .product-image {
+    position: relative;
+}
+
+.product-card.sold .product-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    z-index: 1;
+}
+
+.product-card.sold .product-image::before {
+    content: "INDISPONÍVEL";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    padding: 12px 20px;
+
+    border: 1px solid var(--dourado);
+
+    color: var(--dourado);
+
+    background: transparent;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+
+/* Remove interação de produto disponível */
+
+.product-card.sold {
+    cursor: default;
+}
+
+.product-card.sold:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.product-card.sold:hover .product-image img {
+    transform: none;
+}
