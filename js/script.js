@@ -18,10 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateCarousel() {
 
-        if (!track) return;
+        if (!track || slides.length === 0) return;
+
+        const slideWidth = 100 / slides.length;
 
         track.style.transform =
-            `translateX(-${currentSlide * 25}%)`;
+            `translateX(-${currentSlide * slideWidth}%)`;
 
         dots.forEach((dot, index) => {
 
@@ -66,16 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     if (nextButton) {
-
         nextButton.addEventListener("click", nextSlide);
-
     }
 
 
     if (prevButton) {
-
         prevButton.addEventListener("click", prevSlide);
-
     }
 
 
@@ -122,16 +120,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 if (difference > 50) {
-
                     nextSlide();
-
                 }
 
 
                 if (difference < -50) {
-
                     prevSlide();
-
                 }
 
             },
@@ -185,6 +179,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.addEventListener("click", () => {
 
+                /* NÃO ABRE MODAL PARA PRODUTO INDISPONÍVEL */
+
+                if (card.classList.contains("sold")) {
+                    return;
+                }
+
+
                 const image =
                     card.querySelector(".product-image img");
 
@@ -195,12 +196,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     card.querySelector(".price");
 
 
-                /*
-                   IDENTIFICA AUTOMATICAMENTE
-                   A CATEGORIA DA PÁGINA
-                */
+                /* IDENTIFICA A CATEGORIA */
 
-                let productName = "Produto";
+                let productName = "PRODUTO";
 
                 const pageTitle =
                     document
@@ -211,16 +209,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 if (pageTitle) {
 
-                    productName =
-                        pageTitle
-                            .charAt(0)
-                            .toUpperCase() +
-                        pageTitle
-                            .slice(1)
-                            .toLowerCase();
+                    productName = pageTitle;
 
                 }
 
+
+                /* SALVA PRODUTO SELECIONADO */
 
                 selectedProduct = {
 
@@ -246,13 +240,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 /* IMAGEM */
 
-                if (image && modalImage) {
+                if (modalImage && image) {
 
                     modalImage.src =
                         selectedProduct.image;
 
                     modalImage.alt =
-                        `${selectedProduct.name} GIORNNO ${selectedProduct.ref}`;
+                        `${selectedProduct.name} - ${selectedProduct.ref}`;
 
                 }
 
@@ -262,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (modalName) {
 
                     modalName.textContent =
-                        selectedProduct.name.toUpperCase();
+                        selectedProduct.name;
 
                 }
 
@@ -287,11 +281,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
 
-                /* ABRIR MODAL */
+                /* ABRE MODAL */
 
                 modal.classList.add("active");
 
-                document.body.style.overflow = "hidden";
+                document.body.style.overflow =
+                    "hidden";
 
             });
 
@@ -369,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "554199687027";
 
 
-            /* GERA O LINK COMPLETO DA IMAGEM */
+            /* GERA LINK COMPLETO DA IMAGEM */
 
             const linkImagem =
                 selectedProduct.image
@@ -384,30 +379,149 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const mensagem =
                 `Olá! ✨\n\n` +
-
                 `Tenho interesse nesta peça da GIORNNO Joias:\n\n` +
-
                 `💎 ${selectedProduct.name} — ${selectedProduct.ref}\n` +
-
                 `💰 ${selectedProduct.price}\n\n` +
-
                 `📸 Foto do produto:\n` +
-
                 `${linkImagem}\n\n` +
-
                 `💬 Gostaria de receber mais informações sobre disponibilidade e detalhes desta peça. 😊`;
 
 
-            /* ABRE O WHATSAPP */
+            /* ABRE WHATSAPP */
 
             const url =
                 `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
 
-            window.open(url, "_blank");
+            window.open(
+                url,
+                "_blank"
+            );
 
         });
 
     }
 
+
+  /* =========================
+   FILTRO DO CATÁLOGO
+========================= */
+
+const filterToggle =
+    document.getElementById("filterToggle");
+
+const filterMenu =
+    document.getElementById("filterMenu");
+
+const filterButtons =
+    document.querySelectorAll(".filter-option");
+
+
+/* ABRIR E FECHAR MENU */
+
+if (filterToggle && filterMenu) {
+
+    filterToggle.addEventListener("click", (event) => {
+
+        event.stopPropagation();
+
+        filterMenu.classList.toggle("active");
+
+    });
+
+}
+
+
+/* FILTRAR PRODUTOS */
+
+filterButtons.forEach((button) => {
+
+    button.addEventListener("click", (event) => {
+
+        event.stopPropagation();
+
+        const filter = button.dataset.filter;
+
+
+        /* ATUALIZA A OPÇÃO ATIVA */
+
+        filterButtons.forEach((btn) => {
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+
+        /* FILTRA OS PRODUTOS */
+
+        cards.forEach((card) => {
+
+            const isSold =
+                card.classList.contains("sold");
+
+
+            if (filter === "all") {
+
+                card.classList.remove("hidden");
+
+            }
+
+            else if (
+                filter === "available" &&
+                !isSold
+            ) {
+
+                card.classList.remove("hidden");
+
+            }
+
+            else if (
+                filter === "sold" &&
+                isSold
+            ) {
+
+                card.classList.remove("hidden");
+
+            }
+
+            else {
+
+                card.classList.add("hidden");
+
+            }
+
+        });
+
+
+        /* FECHA O MENU DEPOIS DE SELECIONAR */
+
+        if (filterMenu) {
+
+            filterMenu.classList.remove("active");
+
+        }
+
+    });
+
+});
+
+
+/* FECHA O MENU AO CLICAR FORA */
+
+document.addEventListener("click", (event) => {
+
+    if (
+        filterMenu &&
+        filterToggle &&
+        !filterMenu.contains(event.target) &&
+        !filterToggle.contains(event.target)
+    ) {
+
+        filterMenu.classList.remove("active");
+
+    }
+
+});
 });

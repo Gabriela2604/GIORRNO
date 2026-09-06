@@ -4,263 +4,119 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Conjuntos | GIORNNO</title>
+    <title>Conjuntos | GIORNNO</title>
 
-<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
 
-<!-- HEADER -->
 
-<header>
+    <!-- HEADER -->
 
-    <a href="../index.html" class="logo">
-        <img src="../img/logo1.png" alt="GIORNNO">
-    </a>
+    <header>
 
-    <nav>
+        <a href="../index.html" class="logo">
 
-        <a href="../index.html">INÍCIO</a>
+            <img src="../img/logo1.png" alt="GIORNNO">
 
-        <a href="aneis.html">ANÉIS</a>
+        </a>
 
-        <a href="colares.html">COLARES</a>
 
-        <a href="brincos.html">BRINCOS</a>
+        <nav>
 
-        <a href="pulseiras.html">PULSEIRAS</a>
+            <a href="../index.html">INÍCIO</a>
 
-        <a href="conjuntos.html">CONJUNTOS</a>
+            <a href="aneis.html">ANÉIS</a>
 
-    </nav>
+            <a href="colares.html">COLARES</a>
 
-</header>
+            <a href="brincos.html">BRINCOS</a>
 
+            <a href="pulseiras.html">PULSEIRAS</a>
 
-<!-- TÍTULO DA CATEGORIA -->
+            <a href="conjuntos.html">CONJUNTOS</a>
 
-<section class="catalog-header">
+        </nav>
 
-    <p>GIORNNO JOIAS</p>
+    </header>
 
-    <h2>CONJUNTOS</h2>
 
-    <span></span>
+    <!-- TÍTULO DA CATEGORIA -->
 
-</section>
+    <section class="catalog-header">
 
+        <p>GIORNNO JOIAS</p>
 
-<!-- CATÁLOGO -->
+        <h2>CONJUNTOS</h2>
 
-<main class="catalog">
+        <span></span>
 
-    <div class="product-grid">
+    </section>
 
 
-        <!-- PRODUTO 1 -->
+    <!-- FILTRO -->
 
-        <article
-            class="product-card"
-            data-name="Conjunto"
-            data-ref="001"
-            data-price="R$ 189,90"
-            data-image="../img-conjuntos/conjunto1.png">
-
-            <div class="product-image">
-
-                <img src="../img-conjuntos/conjunto1.png"
-                    alt="Conjunto GIORNNO Ref. 001">
-
-            </div>
-
-            <div class="product-details">
-
-                <p class="product-code">
-                    Ref. 001
-                </p>
-
-                <p class="price">
-                    R$ 189,90
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUTO 2 -->
-
-        <article
-            class="product-card"
-            data-name="Conjunto"
-            data-ref="002"
-            data-price="R$ 219,90"
-            data-image="../img-conjuntos/conjunto2.png">
-
-            <div class="product-image">
-
-                <img src="../img-conjuntos/conjunto2.png"
-                    alt="Conjunto GIORNNO Ref. 002">
-
-            </div>
-
-            <div class="product-details">
-
-                <p class="product-code">
-                    Ref. 002
-                </p>
-
-                <p class="price">
-                    R$ 219,90
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRODUTO 3 -->
-
-        <article
-            class="product-card"
-            data-name="Conjunto"
-            data-ref="003"
-            data-price="R$ 249,90"
-            data-image="../img-conjuntos/conjunto3.png">
-
-            <div class="product-image">
-
-                <img src="../img-conjuntos/conjunto3.png"
-                    alt="Conjunto GIORNNO Ref. 003">
-
-            </div>
-
-            <div class="product-details">
-
-                <p class="product-code">
-                    Ref. 003
-                </p>
-
-                <p class="price">
-                    R$ 249,90
-                </p>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="footer-content">
-
-        <div class="footer-logo">
-
-            <img src="../img/logo1.png" alt="GIORNNO Joias">
-
-        </div>
-
-        <div class="footer-divider"></div>
-
-        <div class="contact">
-
-            <h3>ATENDIMENTO</h3>
-
-            <p>✉ @semijoiasbyfahelen</p>
-
-        </div>
-
-    </div>
-
-</footer>
-
-<!-- MODAL DO PRODUTO -->
-
-<div class="product-modal" id="productModal">
-
-    <div class="modal-overlay"></div>
-
-    <div class="modal-content">
+    <div class="catalog-filter-container">
 
         <button
-            class="modal-close"
-            id="modalClose"
-            aria-label="Fechar">
+            class="filter-icon"
+            id="filterToggle"
+            aria-label="Filtrar produtos">
 
-            ×
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <circle cx="9" cy="6" r="1.5"></circle>
+
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <circle cx="15" cy="12" r="1.5"></circle>
+
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+                <circle cx="11" cy="18" r="1.5"></circle>
+
+            </svg>
 
         </button>
 
 
-        <div class="modal-image">
-
-            <img
-                id="modalProductImage"
-                src=""
-                alt="">
-
-        </div>
-
-
-        <div class="modal-info">
-
-            <p class="modal-category">
-                GIORNNO JOIAS
-            </p>
-
-            <h2 id="modalProductName">
-                CONJUNTO
-            </h2>
-
-            <p
-                class="modal-ref"
-                id="modalProductRef">
-
-                Ref. 001
-
-            </p>
-
-            <p
-                class="modal-price"
-                id="modalProductPrice">
-
-                R$ 189,90
-
-            </p>
-
-            <div class="modal-divider"></div>
-
-            <p class="modal-description">
-
-                Gostou desta peça? Entre em contato conosco
-                para mais informações.
-
-            </p>
+        <div class="filter-menu" id="filterMenu">
 
             <button
-                class="interest-button"
-                id="interestButton">
+                class="filter-option active"
+                data-filter="all">
 
-                MANIFESTAR INTERESSE
+                TODOS
+
+            </button>
+
+
+            <button
+                class="filter-option"
+                data-filter="available">
+
+                DISPONÍVEIS
+
+            </button>
+
+
+            <button
+                class="filter-option"
+                data-filter="sold">
+
+                INDISPONÍVEIS
 
             </button>
 
@@ -268,13 +124,239 @@
 
     </div>
 
-</div>
+
+    <!-- CATÁLOGO -->
+
+    <main class="catalog">
+
+        <div class="product-grid">
 
 
-<!-- JAVASCRIPT -->
+            <!-- PRODUTO 1 -->
 
-<script src="../js/script.js"></script>
-```
+            <article class="product-card available">
+
+                <div class="product-image">
+
+                    <img
+                        src="../img-conjuntos/conjunto1.png"
+                        alt="Conjunto GIORNNO Ref. 001">
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <p class="product-code">
+
+                        Ref. 001
+
+                    </p>
+
+
+                    <p class="price">
+
+                        R$ 189,90
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 2 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+
+                    <img
+                        src="../img-conjuntos/conjunto2.png"
+                        alt="Conjunto GIORNNO Ref. 002">
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <p class="product-code">
+
+                        Ref. 002
+
+                    </p>
+
+
+                    <p class="price">
+
+                        R$ 219,90
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 3 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+
+                    <img
+                        src="../img-conjuntos/conjunto3.png"
+                        alt="Conjunto GIORNNO Ref. 003">
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <p class="product-code">
+
+                        Ref. 003
+
+                    </p>
+
+
+                    <p class="price">
+
+                        R$ 249,90
+
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+
+                <img
+                    src="../img/logo1.png"
+                    alt="GIORNNO Joias">
+
+            </div>
+
+
+            <div class="footer-divider"></div>
+
+
+            <div class="contact">
+
+                <h3>ATENDIMENTO</h3>
+
+                <p>✉ @semijoiasbyfahelen</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- MODAL DO PRODUTO -->
+
+    <div
+        class="product-modal"
+        id="productModal">
+
+        <div class="modal-overlay"></div>
+
+
+        <div class="modal-content">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+                aria-label="Fechar">
+
+                ×
+
+            </button>
+
+
+            <div class="modal-image">
+
+                <img
+                    id="modalProductImage"
+                    src=""
+                    alt="">
+
+            </div>
+
+
+            <div class="modal-info">
+
+                <p class="modal-category">
+
+                    GIORNNO JOIAS
+
+                </p>
+
+
+                <h2 id="modalProductName">
+
+                    CONJUNTO
+
+                </h2>
+
+
+                <p
+                    class="modal-ref"
+                    id="modalProductRef">
+
+                </p>
+
+
+                <p
+                    class="modal-price"
+                    id="modalProductPrice">
+
+                </p>
+
+
+                <div class="modal-divider"></div>
+
+
+                <p class="modal-description">
+
+                    Gostou desta peça? Entre em contato conosco
+                    para mais informações.
+
+                </p>
+
+
+                <button
+                    class="interest-button"
+                    id="interestButton">
+
+                    MANIFESTAR INTERESSE
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/script.js"></script>
 
 </body>
 

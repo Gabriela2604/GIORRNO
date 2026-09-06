@@ -15,16 +15,14 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
 </head>
 
 <body>
 
+    <!-- HEADER -->
 
     <header>
 
@@ -33,24 +31,18 @@
         </a>
 
         <nav>
-
             <a href="../index.html">INÍCIO</a>
-
             <a href="aneis.html">ANÉIS</a>
-
             <a href="colares.html">COLARES</a>
-
             <a href="brincos.html">BRINCOS</a>
-
             <a href="pulseiras.html">PULSEIRAS</a>
-
             <a href="conjuntos.html">CONJUNTOS</a>
-
         </nav>
 
     </header>
 
 
+    <!-- TÍTULO DA CATEGORIA -->
 
     <section class="catalog-header">
 
@@ -63,29 +55,68 @@
     </section>
 
 
+<div class="catalog-filter-container">
+
+    <button
+        class="filter-icon"
+        id="filterToggle"
+        aria-label="Filtrar produtos">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <circle cx="9" cy="6" r="1.5"></circle>
+
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <circle cx="15" cy="12" r="1.5"></circle>
+
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+            <circle cx="11" cy="18" r="1.5"></circle>
+
+        </svg>
+
+    </button>
+
+
+    <div class="filter-menu" id="filterMenu">
+
+        <button class="filter-option active" data-filter="all">
+            TODOS
+        </button>
+
+        <button class="filter-option" data-filter="available">
+            DISPONÍVEIS
+        </button>
+
+        <button class="filter-option" data-filter="sold">
+            INDISPONÍVEIS
+        </button>
+
+    </div>
+
+</div>
+
+
+    <!-- CATÁLOGO -->
 
     <main class="catalog">
 
         <div class="product-grid">
 
 
-            <article class="product-card">
+            <!-- PRODUTO 1 -->
+
+            <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-aneis/anel1.jpeg" alt="Anel Giorno">
+                    <img src="../img-aneis/anel1.jpeg" alt="Anel GIORNNO Ref. 001">
                 </div>
-
 
                 <div class="product-details">
 
+                    <p class="product-code">Ref. 001</p>
 
-                    <p class="product-code">
-                        Ref. 001
-                    </p>
-
-                    <p class="price">
-                        R$ 189,90
-                    </p>
+                    <p class="price">R$ 189,90</p>
 
                 </div>
 
@@ -94,51 +125,36 @@
 
             <!-- PRODUTO 2 -->
 
-            <article class="product-card">
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel2.jpg" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel2.jpg" alt="Anel GIORNNO Ref. 002">
                 </div>
-
 
                 <div class="product-details">
 
-                    <p class="product-code">
-                        Ref. 002
-                    </p>
+                    <p class="product-code">Ref. 002</p>
 
-                    <p class="price">
-                        R$ 219,90
-                    </p>
+                    <p class="price">R$ 219,90</p>
 
                 </div>
 
             </article>
 
 
+            <!-- PRODUTO 3 -->
 
-            <article class="product-card">
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel3.jpg" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel3.jpg" alt="Anel GIORNNO Ref. 003">
                 </div>
-
 
                 <div class="product-details">
 
+                    <p class="product-code">Ref. 003</p>
 
-
-                    <p class="product-code">
-                        Ref. 003
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
+                    <p class="price">R$ 249,90</p>
 
                 </div>
 
@@ -147,53 +163,36 @@
 
             <!-- PRODUTO 4 -->
 
-            <article class="product-card">
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel4.jpg" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel4.jpg" alt="Anel GIORNNO Ref. 004">
                 </div>
-
 
                 <div class="product-details">
 
+                    <p class="product-code">Ref. 004</p>
 
-
-                    <p class="product-code">
-                        Ref. 004
-                    </p>
-
-                    <p class="price">
-                        R$ 199,90
-                    </p>
+                    <p class="price">R$ 199,90</p>
 
                 </div>
 
             </article>
 
 
+            <!-- PRODUTO 5 -->
 
-
-            <article class="product-card">
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel5.jpg" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel5.jpg" alt="Anel GIORNNO Ref. 005">
                 </div>
-
 
                 <div class="product-details">
 
+                    <p class="product-code">Ref. 005</p>
 
-                    <p class="product-code">
-                        Ref. 005
-                    </p>
-
-                    <p class="price">
-                        R$ 229,90
-                    </p>
+                    <p class="price">R$ 229,90</p>
 
                 </div>
 
@@ -202,448 +201,401 @@
 
             <!-- PRODUTO 6 -->
 
-            <article class="product-card">
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel6.jpg" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel6.jpg" alt="Anel GIORNNO Ref. 006">
                 </div>
-
 
                 <div class="product-details">
 
+                    <p class="product-code">Ref. 006</p>
 
-                    <p class="product-code">
-                        Ref. 006
-                    </p>
-
-                    <p class="price">
-                        R$ 259,90
-                    </p>
+                    <p class="price">R$ 259,90</p>
 
                 </div>
 
             </article>
 
-            <article class="product-card">
+
+            <!-- PRODUTO 7 -->
+
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel7.jpg" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel7.jpg" alt="Anel GIORNNO Ref. 007">
                 </div>
-
 
                 <div class="product-details">
 
+                    <p class="product-code">Ref. 007</p>
 
-
-                    <p class="product-code">
-                        Ref. 007
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
+                    <p class="price">R$ 249,90</p>
 
                 </div>
 
             </article>
 
-            <article class="product-card">
+
+            <!-- PRODUTO 8 -->
+
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel8.jpg" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel8.jpg" alt="Anel GIORNNO Ref. 008">
                 </div>
-
 
                 <div class="product-details">
 
+                    <p class="product-code">Ref. 008</p>
 
-
-                    <p class="product-code">
-                        Ref. 008
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
+                    <p class="price">R$ 249,90</p>
 
                 </div>
 
             </article>
 
-            <article class="product-card">
+
+            <!-- PRODUTO 9 -->
+
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel9.jpg" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel9.jpg" alt="Anel GIORNNO Ref. 009">
                 </div>
-
 
                 <div class="product-details">
 
-  
+                    <p class="product-code">Ref. 009</p>
 
-                    <p class="product-code">
-                        Ref. 009
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
+                    <p class="price">R$ 249,90</p>
 
                 </div>
 
             </article>
 
-            <article class="product-card">
+
+            <!-- PRODUTO 10 -->
+
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel10.png" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel10.png" alt="Anel GIORNNO Ref. 010">
                 </div>
-
 
                 <div class="product-details">
 
+                    <p class="product-code">Ref. 010</p>
 
-                    <p class="product-code">
-                        Ref. 010
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
+                    <p class="price">R$ 249,90</p>
 
                 </div>
 
             </article>
 
-            <article class="product-card">
+
+            <!-- PRODUTO 11 -->
+
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel11.jpg" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel11.jpg" alt="Anel GIORNNO Ref. 011">
                 </div>
-
 
                 <div class="product-details">
 
-                    <p class="product-code">
-                        Ref. 011
-                    </p>
+                    <p class="product-code">Ref. 011</p>
 
-                    <p class="price">
-                        R$ 249,90
-                    </p>
+                    <p class="price">R$ 249,90</p>
 
                 </div>
 
             </article>
 
-            <article class="product-card">
+
+            <!-- PRODUTO 12 -->
+
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel12.jpg" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel12.jpg" alt="Anel GIORNNO Ref. 012">
                 </div>
-
 
                 <div class="product-details">
 
+                    <p class="product-code">Ref. 012</p>
 
-                    <p class="product-code">
-                        Ref. 012
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
+                    <p class="price">R$ 249,90</p>
 
                 </div>
 
             </article>
 
-            <article class="product-card">
+
+            <!-- PRODUTO 13 -->
+
+            <article class="product-card available">
 
                 <div class="product-image">
-
-                    <img src="../img-aneis/anel13.jpg" alt="Anel Giorno">
-
+                    <img src="../img-aneis/anel13.jpg" alt="Anel GIORNNO Ref. 013">
                 </div>
-
 
                 <div class="product-details">
 
+                    <p class="product-code">Ref. 013</p>
 
-                    <p class="product-code">
-                        Ref. 013
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
+                    <p class="price">R$ 249,90</p>
 
                 </div>
 
             </article>
+
+
+            <!-- PRODUTO 15 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+                    <img src="../img-aneis/anel15.jpg" alt="Anel GIORNNO Ref. 015">
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">Ref. 015</p>
+
+                    <p class="price">R$ 249,90</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 16 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+                    <img src="../img-aneis/anel16.jpg" alt="Anel GIORNNO Ref. 016">
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">Ref. 016</p>
+
+                    <p class="price">R$ 249,90</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 17 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+                    <img src="../img-aneis/anel17.jpg" alt="Anel GIORNNO Ref. 017">
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">Ref. 017</p>
+
+                    <p class="price">R$ 249,90</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 18 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+                    <img src="../img-aneis/anel18.jpg" alt="Anel GIORNNO Ref. 018">
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">Ref. 018</p>
+
+                    <p class="price">R$ 249,90</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 19 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+                    <img src="../img-aneis/anel19.jpg" alt="Anel GIORNNO Ref. 019">
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">Ref. 019</p>
+
+                    <p class="price">R$ 249,90</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 20 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+                    <img src="../img-aneis/anel20.jpg" alt="Anel GIORNNO Ref. 020">
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">Ref. 020</p>
+
+                    <p class="price">R$ 249,90</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 21 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+                    <img src="../img-aneis/anel21.jpg" alt="Anel GIORNNO Ref. 021">
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">Ref. 021</p>
+
+                    <p class="price">R$ 249,90</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 22 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+                    <img src="../img-aneis/anel22.jpg" alt="Anel GIORNNO Ref. 022">
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">Ref. 022</p>
+
+                    <p class="price">R$ 249,90</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 23 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+                    <img src="../img-aneis/anel23.jpg" alt="Anel GIORNNO Ref. 023">
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">Ref. 023</p>
+
+                    <p class="price">R$ 249,90</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 24 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+                    <img src="../img-aneis/anel24.jpg" alt="Anel GIORNNO Ref. 024">
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">Ref. 024</p>
+
+                    <p class="price">R$ 249,90</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 25 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+                    <img src="../img-aneis/anel25.jpg" alt="Anel GIORNNO Ref. 025">
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">Ref. 025</p>
+
+                    <p class="price">R$ 249,90</p>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUTO 14 - INDISPONÍVEL -->
+            <!-- FICA NO FINAL AUTOMATICAMENTE POR CAUSA DO CSS -->
 
             <article class="product-card sold">
 
                 <div class="product-image">
 
-                    <img src="../img-aneis/anel14.jpg" alt="Anel Giorno">
+                    <img src="../img-aneis/anel14.jpg" alt="Anel GIORNNO Ref. 014">
+
+                    <div class="sold-overlay">
+                        <span>INDISPONÍVEL</span>
+                    </div>
 
                 </div>
 
-
                 <div class="product-details">
 
-                    <p class="product-code">
-                        Ref. 014
-                    </p>
+                    <p class="product-code">Ref. 014</p>
 
-                    <p class="price">
-                        R$ 249,90
-                    </p>
+                    <p class="price">R$ 249,90</p>
 
                 </div>
 
             </article>
 
-            <article class="product-card">
-
-                <div class="product-image">
-
-                    <img src="../img-aneis/anel15.jpg" alt="Anel Giorno">
-
-                </div>
-
-
-                <div class="product-details">
-
-
-                    <p class="product-code">
-                        Ref. 015
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="product-card">
-
-                <div class="product-image">
-
-                    <img src="../img-aneis/anel16.jpg" alt="Anel Giorno">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <p class="product-code">
-                        Ref. 016
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="product-card">
-
-                <div class="product-image">
-
-                    <img src="../img-aneis/anel17.jpg" alt="Anel Giorno">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <p class="product-code">
-                        Ref. 017
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="product-card">
-
-                <div class="product-image">
-
-                    <img src="../img-aneis/anel18.jpg" alt="Anel Giorno">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <p class="product-code">
-                        Ref. 018
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
-
-                </div>
-
-            </article>
-
-                        <article class="product-card">
-
-                <div class="product-image">
-
-                    <img src="../img-aneis/anel19.jpg" alt="Anel Giorno">
-
-                </div>
-
-
-                <div class="product-details">
-
-                    <p class="product-code">
-                        Ref. 019
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
-
-                </div>
-
-            </article>
-
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="../img-aneis/anel20.jpg" alt="Anel Giorno">
-                </div>
-
-                <div class="product-details">
-
-                    <p class="product-code">
-                        Ref. 020
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
-                </div>
-            </article>
-
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="../img-aneis/anel21.jpg" alt="Anel Giorno">
-                </div>
-
-                <div class="product-details">
-
-                    <p class="product-code">
-                        Ref. 021
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
-                </div>
-            </article>
-
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="../img-aneis/anel22.jpg" alt="Anel Giorno">
-                </div>
-
-                <div class="product-details">
-                    <p class="product-code">
-                        Ref. 022
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
-                </div>
-            </article>
-
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="../img-aneis/anel23.jpg" alt="Anel Giorno">
-                </div>
-
-                <div class="product-details">
-
-                    <p class="product-code">
-                        Ref. 023
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
-                </div>
-            </article>
-
-            <article class="product-card">
-
-                <div class="product-image">
-                    <img src="../img-aneis/anel24.jpg" alt="Anel Giorno">
-                </div>
-
-
-                <div class="product-details">
-
-                    <p class="product-code">
-                        Ref. 024
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
-                </div>
-            </article>
-
-            <article class="product-card">
-
-                <div class="product-image">
-                    <img src="../img-aneis/anel25.jpg" alt="Anel Giorno">
-                </div>
-
-                <div class="product-details">
-
-                    <p class="product-code">
-                        Ref. 025
-                    </p>
-
-                    <p class="price">
-                        R$ 249,90
-                    </p>
-                </div>
-            </article>
         </div>
+
     </main>
 
 
+    <!-- FOOTER -->
+
     <footer>
+
         <div class="footer-content">
+
             <div class="footer-logo">
                 <img src="../img/logo1.png" alt="GIORNNO">
             </div>
@@ -651,69 +603,89 @@
             <div class="footer-divider"></div>
 
             <div class="contact">
+
                 <h3>ATENDIMENTO</h3>
+
                 <p>✉ @semijoiasbyfahelen</p>
+
             </div>
+
         </div>
+
     </footer>
+
 
     <!-- MODAL DO PRODUTO -->
 
-<div class="product-modal" id="productModal">
+    <div class="product-modal" id="productModal">
 
-    <div class="modal-overlay"></div>
+        <div class="modal-overlay"></div>
 
-    <div class="modal-content">
-
-        <button
-            class="modal-close"
-            id="modalClose"
-            aria-label="Fechar">
-
-            ×
-
-        </button>
-
-        <div class="modal-image">
-            <img id="modalProductImage" src="" alt="">
-        </div>
-
-        <div class="modal-info">
-
-            <p class="modal-category">
-                GIORNNO JOIAS
-            </p>
-
-            <h2 id="modalProductName">
-                ANEL
-            </h2>
-
-            <p class="modal-ref" id="modalProductRef"></p>
-
-            <p class="modal-price" id="modalProductPrice"></p>
-
-            <div class="modal-divider"></div>
-
-            <p class="modal-description">
-                Gostou desta peça? Entre em contato conosco
-                para mais informações.
-            </p>
+        <div class="modal-content">
 
             <button
-                class="interest-button"
-                id="interestButton">
+                class="modal-close"
+                id="modalClose"
+                aria-label="Fechar">
 
-                MANIFESTAR INTERESSE
+                ×
 
             </button>
+
+            <div class="modal-image">
+
+                <img
+                    id="modalProductImage"
+                    src=""
+                    alt="">
+
+            </div>
+
+            <div class="modal-info">
+
+                <p class="modal-category">
+                    GIORNNO JOIAS
+                </p>
+
+                <h2 id="modalProductName">
+                    ANEL
+                </h2>
+
+                <p
+                    class="modal-ref"
+                    id="modalProductRef">
+                </p>
+
+                <p
+                    class="modal-price"
+                    id="modalProductPrice">
+                </p>
+
+                <div class="modal-divider"></div>
+
+                <p class="modal-description">
+                    Gostou desta peça? Entre em contato conosco
+                    para mais informações.
+                </p>
+
+                <button
+                    class="interest-button"
+                    id="interestButton">
+
+                    MANIFESTAR INTERESSE
+
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
 
-<script src="../js/script.js"></script>
+    <!-- JAVASCRIPT -->
+
+    <script src="../js/script.js"></script>
 
 </body>
 

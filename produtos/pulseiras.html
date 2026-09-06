@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pulseiras | GIORNO</title>
+    <title>Pulseiras | GIORNNO</title>
 
     <link rel="stylesheet" href="../css/style.css">
 
@@ -15,10 +15,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
 </head>
@@ -30,9 +28,12 @@
 
     <header>
 
-        <a href="index.html" class="logo">
+        <a href="../index.html" class="logo">
+
             <img src="../img/logo1.png" alt="GIORNNO">
+
         </a>
+
 
         <nav>
 
@@ -63,20 +64,83 @@
 
         <span></span>
 
-
     </section>
 
+
+    <!-- FILTRO -->
+
+    <div class="catalog-filter-container">
+
+        <button
+            class="filter-icon"
+            id="filterToggle"
+            aria-label="Filtrar produtos">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <circle cx="9" cy="6" r="1.5"></circle>
+
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <circle cx="15" cy="12" r="1.5"></circle>
+
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+                <circle cx="11" cy="18" r="1.5"></circle>
+
+            </svg>
+
+        </button>
+
+
+        <div class="filter-menu" id="filterMenu">
+
+            <button
+                class="filter-option active"
+                data-filter="all">
+
+                TODOS
+
+            </button>
+
+
+            <button
+                class="filter-option"
+                data-filter="available">
+
+                DISPONÍVEIS
+
+            </button>
+
+
+            <button
+                class="filter-option"
+                data-filter="sold">
+
+                INDISPONÍVEIS
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CATÁLOGO -->
 
     <main class="catalog">
 
         <div class="product-grid">
 
 
-            <article class="product-card">
+            <!-- PRODUTO 1 -->
+
+            <article class="product-card available">
 
                 <div class="product-image">
 
-                    <img src="../img-pulseiras/pulseira1.jpg" alt="Anel Giorno">
+                    <img
+                        src="../img-pulseiras/pulseira1.jpg"
+                        alt="Pulseira GIORNNO Ref. 001">
 
                 </div>
 
@@ -98,11 +162,13 @@
 
             <!-- PRODUTO 2 -->
 
-            <article class="product-card">
+            <article class="product-card available">
 
                 <div class="product-image">
 
-                    <img src="../img-pulseiras/pulseira2.jpg" alt="Anel Giorno">
+                    <img
+                        src="../img-pulseiras/pulseira2.jpg"
+                        alt="Pulseira GIORNNO Ref. 002">
 
                 </div>
 
@@ -124,11 +190,13 @@
 
             <!-- PRODUTO 3 -->
 
-            <article class="product-card">
+            <article class="product-card available">
 
                 <div class="product-image">
 
-                    <img src="../img-pulseiras/pulseira3.jpg" alt="Anel Giorno">
+                    <img
+                        src="../img-pulseiras/pulseira3.jpg"
+                        alt="Pulseira GIORNNO Ref. 003">
 
                 </div>
 
@@ -150,11 +218,13 @@
 
             <!-- PRODUTO 4 -->
 
-            <article class="product-card">
+            <article class="product-card available">
 
                 <div class="product-image">
 
-                    <img src="../img-pulseiras/pulseira4.jpg" alt="Anel Giorno">
+                    <img
+                        src="../img-pulseiras/pulseira4.jpg"
+                        alt="Pulseira GIORNNO Ref. 004">
 
                 </div>
 
@@ -176,11 +246,13 @@
 
             <!-- PRODUTO 5 -->
 
-            <article class="product-card">
+            <article class="product-card available">
 
                 <div class="product-image">
 
-                    <img src="../img-pulseiras/pulseira5.jpg" alt="Anel Giorno">
+                    <img
+                        src="../img-pulseiras/pulseira5.jpg"
+                        alt="Pulseira GIORNNO Ref. 005">
 
                 </div>
 
@@ -202,11 +274,13 @@
 
             <!-- PRODUTO 6 -->
 
-            <article class="product-card">
+            <article class="product-card available">
 
                 <div class="product-image">
 
-                    <img src="../img-pulseiras/pulseira6.jpg" alt="Anel Giorno">
+                    <img
+                        src="../img-pulseiras/pulseira6.jpg"
+                        alt="Pulseira GIORNNO Ref. 006">
 
                 </div>
 
@@ -225,11 +299,16 @@
 
             </article>
 
-            <article class="product-card">
+
+            <!-- PRODUTO 7 -->
+
+            <article class="product-card available">
 
                 <div class="product-image">
 
-                    <img src="../img-pulseiras/pulseira7.jpg" alt="Anel Giorno">
+                    <img
+                        src="../img-pulseiras/pulseira7.jpg"
+                        alt="Pulseira GIORNNO Ref. 007">
 
                 </div>
 
@@ -249,110 +328,174 @@
             </article>
 
 
+            <!--
+                EXEMPLO DE PRODUTO INDISPONÍVEL
+
+                Quando quiser marcar uma pulseira como indisponível,
+                troque "available" por "sold" e adicione o bloco
+                sold-overlay dentro de product-image.
+            -->
+
+            <!--
+
+            <article class="product-card sold">
+
+                <div class="product-image">
+
+                    <img
+                        src="../img-pulseiras/pulseira8.jpg"
+                        alt="Pulseira GIORNNO Ref. 008">
+
+                    <div class="sold-overlay">
+
+                        <span>INDISPONÍVEL</span>
+
+                    </div>
+
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">
+                        Ref. 008
+                    </p>
+
+                    <p class="price">
+                        R$ 259,90
+                    </p>
+
+                </div>
+
+            </article>
+
+            -->
+
         </div>
 
     </main>
 
-<!-- FOOTER -->
 
-<footer>
+    <!-- FOOTER -->
 
-    <div class="footer-content">
+    <footer>
 
-        <div class="footer-logo">
+        <div class="footer-content">
 
-            <img src="../img/logo1.png" alt="GIORNNO Joias">
+            <div class="footer-logo">
 
-        </div>
+                <img
+                    src="../img/logo1.png"
+                    alt="GIORNNO Joias">
 
-        <div class="footer-divider"></div>
-
-        <div class="contact">
-
-            <h3>ATENDIMENTO</h3>
-
-            <p>✉ @semijoiasbyfahelen</p>
-
-        </div>
-
-    </div>
-
-</footer>
+            </div>
 
 
-<!-- MODAL DO PRODUTO -->
-
-<div class="product-modal" id="productModal">
-
-    <div class="modal-overlay"></div>
-
-    <div class="modal-content">
-
-        <button
-            class="modal-close"
-            id="modalClose"
-            aria-label="Fechar">
-
-            ×
-
-        </button>
+            <div class="footer-divider"></div>
 
 
-        <div class="modal-image">
+            <div class="contact">
 
-            <img
-                id="modalProductImage"
-                src=""
-                alt="">
+                <h3>ATENDIMENTO</h3>
+
+                <p>✉ @semijoiasbyfahelen</p>
+
+            </div>
 
         </div>
 
+    </footer>
 
-        <div class="modal-info">
 
-            <p class="modal-category">
-                GIORNNO JOIAS
-            </p>
+    <!-- MODAL DO PRODUTO -->
 
-            <h2 id="modalProductName">
-                PULSEIRA
-            </h2>
+    <div
+        class="product-modal"
+        id="productModal">
 
-            <p
-                class="modal-ref"
-                id="modalProductRef">
-            </p>
+        <div class="modal-overlay"></div>
 
-            <p
-                class="modal-price"
-                id="modalProductPrice">
-            </p>
 
-            <div class="modal-divider"></div>
-
-            <p class="modal-description">
-                Gostou desta peça? Entre em contato conosco
-                para mais informações.
-            </p>
+        <div class="modal-content">
 
             <button
-                class="interest-button"
-                id="interestButton">
+                class="modal-close"
+                id="modalClose"
+                aria-label="Fechar">
 
-                MANIFESTAR INTERESSE
+                ×
 
             </button>
 
+
+            <div class="modal-image">
+
+                <img
+                    id="modalProductImage"
+                    src=""
+                    alt="">
+
+            </div>
+
+
+            <div class="modal-info">
+
+                <p class="modal-category">
+
+                    GIORNNO JOIAS
+
+                </p>
+
+
+                <h2 id="modalProductName">
+
+                    PULSEIRA
+
+                </h2>
+
+
+                <p
+                    class="modal-ref"
+                    id="modalProductRef">
+
+                </p>
+
+
+                <p
+                    class="modal-price"
+                    id="modalProductPrice">
+
+                </p>
+
+
+                <div class="modal-divider"></div>
+
+
+                <p class="modal-description">
+
+                    Gostou desta peça? Entre em contato conosco
+                    para mais informações.
+
+                </p>
+
+
+                <button
+                    class="interest-button"
+                    id="interestButton">
+
+                    MANIFESTAR INTERESSE
+
+                </button>
+
+            </div>
+
         </div>
 
     </div>
 
-</div>
 
+    <!-- JAVASCRIPT -->
 
-<!-- JAVASCRIPT -->
-
-<script src="../js/script.js"></script>
+    <script src="../js/script.js"></script>
 
 
 </body>
