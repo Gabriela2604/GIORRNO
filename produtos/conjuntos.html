@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Conjuntos | GIORNNO</title>
@@ -16,8 +14,10 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
 
     <!-- Vercel Web Analytics -->
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
@@ -26,30 +26,21 @@
 
 <body>
 
-
     <!-- HEADER -->
 
     <header>
 
         <a href="../index.html" class="logo">
-
             <img src="../img/logo1.png" alt="GIORNNO">
-
         </a>
-
 
         <nav>
 
             <a href="../index.html">INÍCIO</a>
-
             <a href="aneis.html">ANÉIS</a>
-
             <a href="colares.html">COLARES</a>
-
             <a href="brincos.html">BRINCOS</a>
-
             <a href="pulseiras.html">PULSEIRAS</a>
-
             <a href="conjuntos.html">CONJUNTOS</a>
 
         </nav>
@@ -70,62 +61,103 @@
     </section>
 
 
-    <!-- FILTRO -->
+<!-- FILTRO -->
 
-    <div class="catalog-filter-container">
+<div class="catalog-filter-container">
 
-        <button
-            class="filter-icon"
-            id="filterToggle"
-            aria-label="Filtrar produtos">
+    <button
+        class="filter-icon"
+        id="filterToggle"
+        aria-label="Filtrar produtos"
+    >
 
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
 
-                <line x1="4" y1="6" x2="20" y2="6"></line>
-                <circle cx="9" cy="6" r="1.5"></circle>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <circle cx="9" cy="6" r="1.5"></circle>
 
-                <line x1="4" y1="12" x2="20" y2="12"></line>
-                <circle cx="15" cy="12" r="1.5"></circle>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <circle cx="15" cy="12" r="1.5"></circle>
 
-                <line x1="4" y1="18" x2="20" y2="18"></line>
-                <circle cx="11" cy="18" r="1.5"></circle>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+            <circle cx="11" cy="18" r="1.5"></circle>
 
-            </svg>
+        </svg>
 
-        </button>
+    </button>
 
 
-        <div class="filter-menu" id="filterMenu">
+    <div class="filter-menu" id="filterMenu">
+
+        <!-- DISPONIBILIDADE -->
+
+        <div class="filter-section">
+
+            <p class="filter-title">
+                DISPONIBILIDADE
+            </p>
 
             <button
-                class="filter-option active"
-                data-filter="all">
-
+                class="filter-option availability-option active"
+                data-availability="all"
+            >
                 TODOS
-
             </button>
 
-
             <button
-                class="filter-option"
-                data-filter="available">
-
+                class="filter-option availability-option"
+                data-availability="available"
+            >
                 DISPONÍVEIS
-
             </button>
 
+            <button
+                class="filter-option availability-option"
+                data-availability="sold"
+            >
+                INDISPONÍVEIS
+            </button>
+
+        </div>
+
+
+        <div class="filter-divider"></div>
+
+
+        <!-- PREÇO -->
+
+        <div class="filter-section">
+
+            <p class="filter-title">
+                PREÇO
+            </p>
 
             <button
-                class="filter-option"
-                data-filter="sold">
+                class="filter-option sort-option active"
+                data-sort="original"
+            >
+                PADRÃO
+            </button>
 
-                INDISPONÍVEIS
+            <button
+                class="filter-option sort-option"
+                data-sort="price-low"
+            >
+                MENOR PREÇO
+            </button>
 
+            <button
+                class="filter-option sort-option"
+                data-sort="price-high"
+            >
+                MAIOR PREÇO
             </button>
 
         </div>
 
     </div>
+
+</div>
 
 
     <!-- CATÁLOGO -->
@@ -143,24 +175,19 @@
 
                     <img
                         src="../img-conjuntos/conjunto1.png"
-                        alt="Conjunto GIORNNO Ref. 3364">
+                        alt="Conjunto GIORNNO Ref. 3364"
+                    >
 
                 </div>
-
 
                 <div class="product-details">
 
                     <p class="product-code">
-
                         Ref. 3364
-
                     </p>
 
-
                     <p class="price">
-
                         R$ 159,90
-
                     </p>
 
                 </div>
@@ -176,24 +203,19 @@
 
                     <img
                         src="../img-conjuntos/conjunto2.png"
-                        alt="Conjunto GIORNNO Ref. 2017">
+                        alt="Conjunto GIORNNO Ref. 2017"
+                    >
 
                 </div>
-
 
                 <div class="product-details">
 
                     <p class="product-code">
-
                         Ref. 2017
-
                     </p>
 
-
                     <p class="price">
-
                         R$ 169,90
-
                     </p>
 
                 </div>
@@ -203,31 +225,36 @@
 
             <!-- PRODUTO 3 -->
 
-            <article class="product-card available sold">
+            <article class="product-card sold">
 
-                                <div class="product-image">
+                <div class="product-image">
 
-                    <img src="../img-conjuntos/conjunto3.png"
-                         alt="Brinco GIORNNO Ref. 000">
+                    <img
+                        src="../img-conjuntos/conjunto3.png"
+                        alt="Conjunto GIORNNO Ref. 000"
+                    >
 
                     <div class="sold-overlay">
+
                         <span>INDISPONÍVEL</span>
+
                     </div>
 
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 000</p>
+                    <p class="product-code">
+                        Ref. 000
+                    </p>
 
-                    <p class="price">R$ 159,90</p>
+                    <p class="price">
+                        R$ 159,90
+                    </p>
 
                 </div>
 
             </article>
-
-
-
 
 
         </div>
@@ -245,13 +272,12 @@
 
                 <img
                     src="../img/logo1.png"
-                    alt="GIORNNO Joias">
+                    alt="GIORNNO Joias"
+                >
 
             </div>
 
-
             <div class="footer-divider"></div>
-
 
             <div class="contact">
 
@@ -270,20 +296,19 @@
 
     <div
         class="product-modal"
-        id="productModal">
+        id="productModal"
+    >
 
         <div class="modal-overlay"></div>
-
 
         <div class="modal-content">
 
             <button
                 class="modal-close"
                 id="modalClose"
-                aria-label="Fechar">
-
+                aria-label="Fechar"
+            >
                 ×
-
             </button>
 
 
@@ -292,7 +317,8 @@
                 <img
                     id="modalProductImage"
                     src=""
-                    alt="">
+                    alt=""
+                >
 
             </div>
 
@@ -300,35 +326,24 @@
             <div class="modal-info">
 
                 <p class="modal-category">
-
                     GIORNNO JOIAS
-
                 </p>
 
-
                 <h2 id="modalProductName">
-
                     CONJUNTO
-
                 </h2>
-
 
                 <p
                     class="modal-ref"
-                    id="modalProductRef">
-
-                </p>
-
+                    id="modalProductRef"
+                ></p>
 
                 <p
                     class="modal-price"
-                    id="modalProductPrice">
-
-                </p>
-
+                    id="modalProductPrice"
+                ></p>
 
                 <div class="modal-divider"></div>
-
 
                 <p class="modal-description">
 
@@ -337,13 +352,11 @@
 
                 </p>
 
-
                 <button
                     class="interest-button"
-                    id="interestButton">
-
+                    id="interestButton"
+                >
                     MANIFESTAR INTERESSE
-
                 </button>
 
             </div>

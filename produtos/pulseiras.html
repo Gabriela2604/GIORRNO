@@ -37,23 +37,14 @@
 
         </a>
 
-
         <nav>
-
             <a href="../index.html">INÍCIO</a>
-
             <a href="aneis.html">ANÉIS</a>
-
             <a href="colares.html">COLARES</a>
-
             <a href="brincos.html">BRINCOS</a>
-
             <a href="pulseiras.html">PULSEIRAS</a>
-
             <a href="conjuntos.html">CONJUNTOS</a>
-
         </nav>
-
     </header>
 
 
@@ -70,63 +61,103 @@
     </section>
 
 
-    <!-- FILTRO -->
+   <!-- FILTRO -->
 
-    <div class="catalog-filter-container">
+<div class="catalog-filter-container">
 
-        <button
-            class="filter-icon"
-            id="filterToggle"
-            aria-label="Filtrar produtos">
+    <button
+        class="filter-icon"
+        id="filterToggle"
+        aria-label="Filtrar produtos"
+    >
 
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
 
-                <line x1="4" y1="6" x2="20" y2="6"></line>
-                <circle cx="9" cy="6" r="1.5"></circle>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <circle cx="9" cy="6" r="1.5"></circle>
 
-                <line x1="4" y1="12" x2="20" y2="12"></line>
-                <circle cx="15" cy="12" r="1.5"></circle>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <circle cx="15" cy="12" r="1.5"></circle>
 
-                <line x1="4" y1="18" x2="20" y2="18"></line>
-                <circle cx="11" cy="18" r="1.5"></circle>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+            <circle cx="11" cy="18" r="1.5"></circle>
 
-            </svg>
+        </svg>
 
-        </button>
+    </button>
 
 
-        <div class="filter-menu" id="filterMenu">
+    <div class="filter-menu" id="filterMenu">
+
+        <!-- DISPONIBILIDADE -->
+
+        <div class="filter-section">
+
+            <p class="filter-title">
+                DISPONIBILIDADE
+            </p>
 
             <button
-                class="filter-option active"
-                data-filter="all">
-
+                class="filter-option availability-option active"
+                data-availability="all"
+            >
                 TODOS
-
             </button>
 
-
             <button
-                class="filter-option"
-                data-filter="available">
-
+                class="filter-option availability-option"
+                data-availability="available"
+            >
                 DISPONÍVEIS
-
             </button>
 
+            <button
+                class="filter-option availability-option"
+                data-availability="sold"
+            >
+                INDISPONÍVEIS
+            </button>
+
+        </div>
+
+
+        <div class="filter-divider"></div>
+
+
+        <!-- PREÇO -->
+
+        <div class="filter-section">
+
+            <p class="filter-title">
+                PREÇO
+            </p>
 
             <button
-                class="filter-option"
-                data-filter="sold">
+                class="filter-option sort-option active"
+                data-sort="original"
+            >
+                PADRÃO
+            </button>
 
-                INDISPONÍVEIS
+            <button
+                class="filter-option sort-option"
+                data-sort="price-low"
+            >
+                MENOR PREÇO
+            </button>
 
+            <button
+                class="filter-option sort-option"
+                data-sort="price-high"
+            >
+                MAIOR PREÇO
             </button>
 
         </div>
 
     </div>
 
+</div>
 
     <!-- CATÁLOGO -->
 

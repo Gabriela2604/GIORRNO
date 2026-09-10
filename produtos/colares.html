@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="../css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
@@ -25,7 +24,9 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================== -->
 
     <header>
 
@@ -47,7 +48,9 @@
     </header>
 
 
-    <!-- TÍTULO DA CATEGORIA -->
+    <!-- =========================
+         TÍTULO DA CATEGORIA
+    ========================== -->
 
     <section class="catalog-header">
 
@@ -60,16 +63,23 @@
     </section>
 
 
-    <!-- FILTRO -->
+    <!-- =========================
+         FILTRO
+    ========================== -->
 
     <div class="catalog-filter-container">
 
         <button
             class="filter-icon"
             id="filterToggle"
-            aria-label="Filtrar produtos">
+            aria-label="Filtrar produtos"
+            aria-expanded="false"
+        >
 
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
 
                 <line x1="4" y1="6" x2="20" y2="6"></line>
                 <circle cx="9" cy="6" r="1.5"></circle>
@@ -85,26 +95,81 @@
         </button>
 
 
-        <div class="filter-menu" id="filterMenu">
+        <div
+            class="filter-menu"
+            id="filterMenu"
+        >
 
-            <button class="filter-option active" data-filter="all">
-                TODOS
-            </button>
+            <div class="filter-section">
 
-            <button class="filter-option" data-filter="available">
-                DISPONÍVEIS
-            </button>
+                <p class="filter-title">
+                    DISPONIBILIDADE
+                </p>
 
-            <button class="filter-option" data-filter="sold">
-                INDISPONÍVEIS
-            </button>
+                <button
+                    class="filter-option availability-option active"
+                    data-availability="all"
+                >
+                    TODOS
+                </button>
+
+                <button
+                    class="filter-option availability-option"
+                    data-availability="available"
+                >
+                    DISPONÍVEIS
+                </button>
+
+                <button
+                    class="filter-option availability-option"
+                    data-availability="sold"
+                >
+                    INDISPONÍVEIS
+                </button>
+
+            </div>
+
+
+            <div class="filter-divider"></div>
+
+
+            <div class="filter-section">
+
+                <p class="filter-title">
+                    ORDENAR POR
+                </p>
+
+                <button
+                    class="filter-option sort-option active"
+                    data-sort="original"
+                >
+                    PADRÃO
+                </button>
+
+                <button
+                    class="filter-option sort-option"
+                    data-sort="price-low"
+                >
+                    MENOR PREÇO
+                </button>
+
+                <button
+                    class="filter-option sort-option"
+                    data-sort="price-high"
+                >
+                    MAIOR PREÇO
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
 
-    <!-- CATÁLOGO -->
+    <!-- =========================
+         CATÁLOGO
+    ========================== -->
 
     <main class="catalog">
 
@@ -116,15 +181,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-colares/colar1.jpg"
-                        alt="Colar GIORNNO Ref. 2181">
+
+                    <img
+                        src="../img-colares/colar1.jpg"
+                        alt="Colar GIORNNO Ref. 2181"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 2181</p>
+                    <p class="product-code">
+                        Ref. 2181
+                    </p>
 
-                    <p class="price">R$ 99,90</p>
+                    <p class="price">
+                        R$ 99,90
+                    </p>
 
                 </div>
 
@@ -136,15 +209,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-colares/colar2.jpg"
-                        alt="Colar GIORNNO Ref. 1773">
+
+                    <img
+                        src="../img-colares/colar2.jpg"
+                        alt="Colar GIORNNO Ref. 1773"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 1773</p>
+                    <p class="product-code">
+                        Ref. 1773
+                    </p>
 
-                    <p class="price">R$ 129,90</p>
+                    <p class="price">
+                        R$ 129,90
+                    </p>
 
                 </div>
 
@@ -153,25 +234,37 @@
 
             <!-- PRODUTO 3 -->
 
-            <article class="product-card available sold">
+            <article class="product-card sold">
+
                 <div class="product-image">
 
-                    <img src="../img-colares/colar3.jpg"
-                         alt="Brinco GIORNNO Ref. 3269">
+                    <img
+                        src="../img-colares/colar3.jpg"
+                        alt="Colar GIORNNO Ref. 3269"
+                    >
 
                     <div class="sold-overlay">
-                        <span>INDISPONÍVEL</span>
+
+                        <span>
+                            INDISPONÍVEL
+                        </span>
+
                     </div>
 
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 3269</p>
+                    <p class="product-code">
+                        Ref. 3269
+                    </p>
 
-                    <p class="price">R$ 139,90</p>
+                    <p class="price">
+                        R$ 139,90
+                    </p>
 
                 </div>
+
             </article>
 
 
@@ -180,15 +273,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-colares/colar4.jpg"
-                        alt="Colar GIORNNO Ref. 3446">
+
+                    <img
+                        src="../img-colares/colar4.jpg"
+                        alt="Colar GIORNNO Ref. 3446"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 3446</p>
+                    <p class="product-code">
+                        Ref. 3446
+                    </p>
 
-                    <p class="price">R$ 109,90</p>
+                    <p class="price">
+                        R$ 109,90
+                    </p>
 
                 </div>
 
@@ -200,15 +301,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-colares/colar5.jpg"
-                        alt="Colar GIORNNO Ref. 1239">
+
+                    <img
+                        src="../img-colares/colar5.jpg"
+                        alt="Colar GIORNNO Ref. 1239"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 1239</p>
+                    <p class="product-code">
+                        Ref. 1239
+                    </p>
 
-                    <p class="price">R$ 199,90</p>
+                    <p class="price">
+                        R$ 199,90
+                    </p>
 
                 </div>
 
@@ -220,15 +329,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-colares/colar6.jpg"
-                        alt="Colar GIORNNO Ref. 3408">
+
+                    <img
+                        src="../img-colares/colar6.jpg"
+                        alt="Colar GIORNNO Ref. 3408"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 3408</p>
+                    <p class="product-code">
+                        Ref. 3408
+                    </p>
 
-                    <p class="price">R$ 159,90</p>
+                    <p class="price">
+                        R$ 159,90
+                    </p>
 
                 </div>
 
@@ -240,15 +357,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-colares/colar7.jpg"
-                        alt="Colar GIORNNO Ref. 3479">
+
+                    <img
+                        src="../img-colares/colar7.jpg"
+                        alt="Colar GIORNNO Ref. 3479"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 3479</p>
+                    <p class="product-code">
+                        Ref. 3479
+                    </p>
 
-                    <p class="price">R$ 149,90</p>
+                    <p class="price">
+                        R$ 149,90
+                    </p>
 
                 </div>
 
@@ -260,15 +385,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-colares/colar8.png"
-                        alt="Colar GIORNNO Ref. 3271">
+
+                    <img
+                        src="../img-colares/colar8.png"
+                        alt="Colar GIORNNO Ref. 3271"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 3271</p>
+                    <p class="product-code">
+                        Ref. 3271
+                    </p>
 
-                    <p class="price">R$ 199,90</p>
+                    <p class="price">
+                        R$ 199,90
+                    </p>
 
                 </div>
 
@@ -280,15 +413,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-colares/colar9.jpg"
-                        alt="Colar GIORNNO Ref. 1166">
+
+                    <img
+                        src="../img-colares/colar9.jpg"
+                        alt="Colar GIORNNO Ref. 1166"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 1166</p>
+                    <p class="product-code">
+                        Ref. 1166
+                    </p>
 
-                    <p class="price">R$ 149,90</p>
+                    <p class="price">
+                        R$ 149,90
+                    </p>
 
                 </div>
 
@@ -300,15 +441,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-colares/colar10.jpg"
-                        alt="Colar GIORNNO Ref. 3270">
+
+                    <img
+                        src="../img-colares/colar10.jpg"
+                        alt="Colar GIORNNO Ref. 3270"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 3270</p>
+                    <p class="product-code">
+                        Ref. 3270
+                    </p>
 
-                    <p class="price">R$ 139,90</p>
+                    <p class="price">
+                        R$ 139,90
+                    </p>
 
                 </div>
 
@@ -320,7 +469,9 @@
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer>
 
@@ -330,7 +481,8 @@
 
                 <img
                     src="../img/logo1.png"
-                    alt="GIORNNO Joias">
+                    alt="GIORNNO Joias"
+                >
 
             </div>
 
@@ -338,9 +490,13 @@
 
             <div class="contact">
 
-                <h3>ATENDIMENTO</h3>
+                <h3>
+                    ATENDIMENTO
+                </h3>
 
-                <p>✉ @semijoiasbyfahelen</p>
+                <p>
+                    ✉ @semijoiasbyfahelen
+                </p>
 
             </div>
 
@@ -349,11 +505,14 @@
     </footer>
 
 
-    <!-- MODAL DO PRODUTO -->
+    <!-- =========================
+         MODAL DO PRODUTO
+    ========================== -->
 
     <div
         class="product-modal"
-        id="productModal">
+        id="productModal"
+    >
 
         <div class="modal-overlay"></div>
 
@@ -363,10 +522,9 @@
             <button
                 class="modal-close"
                 id="modalClose"
-                aria-label="Fechar">
-
+                aria-label="Fechar"
+            >
                 ×
-
             </button>
 
 
@@ -375,7 +533,8 @@
                 <img
                     id="modalProductImage"
                     src=""
-                    alt="">
+                    alt=""
+                >
 
             </div>
 
@@ -394,14 +553,14 @@
 
                 <p
                     class="modal-ref"
-                    id="modalProductRef">
-                </p>
+                    id="modalProductRef"
+                ></p>
 
 
                 <p
                     class="modal-price"
-                    id="modalProductPrice">
-                </p>
+                    id="modalProductPrice"
+                ></p>
 
 
                 <div class="modal-divider"></div>
@@ -417,10 +576,9 @@
 
                 <button
                     class="interest-button"
-                    id="interestButton">
-
+                    id="interestButton"
+                >
                     MANIFESTAR INTERESSE
-
                 </button>
 
             </div>
@@ -430,7 +588,9 @@
     </div>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script src="../js/script.js"></script>
 

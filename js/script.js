@@ -7,75 +7,52 @@ document.addEventListener("DOMContentLoaded", () => {
     const track = document.querySelector(".carousel-track");
     const slides = document.querySelectorAll(".carousel-slide");
     const dots = document.querySelectorAll(".dot");
-
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
+    const prevButton = document.querySelector(".carousel-btn.prev");
+    const nextButton = document.querySelector(".carousel-btn.next");
 
     let currentSlide = 0;
-    let startX = 0;
-    let endX = 0;
-
 
     function updateCarousel() {
 
         if (!track || slides.length === 0) return;
 
-        const slideWidth = 100 / slides.length;
+        const slideWidth = slides[0].offsetWidth;
 
         track.style.transform =
-            `translateX(-${currentSlide * slideWidth}%)`;
+            `translateX(-${currentSlide * slideWidth}px)`;
 
         dots.forEach((dot, index) => {
-
-            dot.classList.toggle(
-                "active",
-                index === currentSlide
-            );
-
+            dot.classList.toggle("active", index === currentSlide);
         });
-
     }
-
 
     function nextSlide() {
 
         if (slides.length === 0) return;
 
-        currentSlide++;
-
-        if (currentSlide >= slides.length) {
-            currentSlide = 0;
-        }
+        currentSlide =
+            (currentSlide + 1) % slides.length;
 
         updateCarousel();
-
     }
-
 
     function prevSlide() {
 
         if (slides.length === 0) return;
 
-        currentSlide--;
-
-        if (currentSlide < 0) {
-            currentSlide = slides.length - 1;
-        }
+        currentSlide =
+            (currentSlide - 1 + slides.length) % slides.length;
 
         updateCarousel();
-
     }
-
 
     if (nextButton) {
         nextButton.addEventListener("click", nextSlide);
     }
 
-
     if (prevButton) {
         prevButton.addEventListener("click", prevSlide);
     }
-
 
     dots.forEach((dot, index) => {
 
@@ -84,55 +61,52 @@ document.addEventListener("DOMContentLoaded", () => {
             currentSlide = index;
 
             updateCarousel();
-
         });
 
     });
 
+    window.addEventListener("resize", updateCarousel);
+
 
     /* =========================
-       SWIPE NO CELULAR
+       SWIPE DO CARROSSEL
     ========================= */
+
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     if (track) {
 
-        track.addEventListener(
-            "touchstart",
-            (event) => {
+        track.addEventListener("touchstart", (event) => {
 
-                startX =
-                    event.touches[0].clientX;
+            touchStartX =
+                event.changedTouches[0].screenX;
 
-            },
-            { passive: true }
-        );
+        });
 
+        track.addEventListener("touchend", (event) => {
 
-        track.addEventListener(
-            "touchend",
-            (event) => {
+            touchEndX =
+                event.changedTouches[0].screenX;
 
-                endX =
-                    event.changedTouches[0].clientX;
+            const difference =
+                touchStartX - touchEndX;
 
-                const difference =
-                    startX - endX;
+            if (Math.abs(difference) > 50) {
 
-
-                if (difference > 50) {
+                if (difference > 0) {
                     nextSlide();
-                }
-
-
-                if (difference < -50) {
+                } else {
                     prevSlide();
                 }
 
-            },
-            { passive: true }
-        );
+            }
+
+        });
 
     }
+
+    updateCarousel();
 
 
     /* =========================
@@ -166,190 +140,136 @@ document.addEventListener("DOMContentLoaded", () => {
     const interestButton =
         document.getElementById("interestButton");
 
-    let selectedProduct = {};
+    let selectedProduct = null;
 
 
-    /* =========================
-       ABRIR MODAL
-    ========================= */
+    cards.forEach((card) => {
 
-    if (cards.length > 0 && modal) {
+        card.addEventListener("click", () => {
 
-        cards.forEach((card) => {
+            // Não abre o modal para produtos indisponíveis
+            if (card.classList.contains("sold")) {
+                return;
+            }
 
-            card.addEventListener("click", () => {
+            const image =
+                card.querySelector(".product-image img");
 
-                /* NÃO ABRE MODAL PARA PRODUTO INDISPONÍVEL */
+            const name =
+                card.querySelector(".product-name");
 
-                if (card.classList.contains("sold")) {
-                    return;
-                }
+            const ref =
+                card.querySelector(".product-code");
 
+            const price =
+                card.querySelector(".price");
 
-                const image =
-                    card.querySelector(".product-image img");
+            if (!image || !modal) return;
 
-                const ref =
-                    card.querySelector(".product-code");
+            selectedProduct = {
 
-                const price =
-                    card.querySelector(".price");
+                image:
+                    image.getAttribute("src"),
 
+                name:
+                    name
+                        ? name.textContent.trim()
+                        : "",
 
-                /* IDENTIFICA A CATEGORIA */
+                ref:
+                    ref
+                        ? ref.textContent.trim()
+                        : "",
 
-                let productName = "PRODUTO";
+                price:
+                    price
+                        ? price.textContent.trim()
+                        : ""
 
-                const pageTitle =
-                    document
-                        .querySelector(".catalog-header h2")
-                        ?.textContent
-                        .trim();
+            };
 
+            if (modalImage) {
 
-                if (pageTitle) {
+                modalImage.src =
+                    selectedProduct.image;
 
-                    productName = pageTitle;
+                modalImage.alt =
+                    selectedProduct.name;
 
-                }
+            }
 
+            if (modalName) {
 
-                /* SALVA PRODUTO SELECIONADO */
+                modalName.textContent =
+                    selectedProduct.name;
 
-                selectedProduct = {
+            }
 
-                    name: productName,
+            if (modalRef) {
 
-                    ref:
-                        ref
-                            ? ref.textContent.trim()
-                            : "Sem referência",
+                modalRef.textContent =
+                    selectedProduct.ref;
 
-                    price:
-                        price
-                            ? price.textContent.trim()
-                            : "Consultar preço",
+            }
 
-                    image:
-                        image
-                            ? image.getAttribute("src")
-                            : ""
+            if (modalPrice) {
 
-                };
+                modalPrice.textContent =
+                    selectedProduct.price;
 
+            }
 
-                /* IMAGEM */
+            modal.classList.add("active");
 
-                if (modalImage && image) {
-
-                    modalImage.src =
-                        selectedProduct.image;
-
-                    modalImage.alt =
-                        `${selectedProduct.name} - ${selectedProduct.ref}`;
-
-                }
-
-
-                /* NOME */
-
-                if (modalName) {
-
-                    modalName.textContent =
-                        selectedProduct.name;
-
-                }
-
-
-                /* REFERÊNCIA */
-
-                if (modalRef) {
-
-                    modalRef.textContent =
-                        selectedProduct.ref;
-
-                }
-
-
-                /* PREÇO */
-
-                if (modalPrice) {
-
-                    modalPrice.textContent =
-                        selectedProduct.price;
-
-                }
-
-
-                /* ABRE MODAL */
-
-                modal.classList.add("active");
-
-                document.body.style.overflow =
-                    "hidden";
-
-            });
+            document.body.classList.add("modal-open");
 
         });
 
-    }
+    });
 
 
     /* =========================
        FECHAR MODAL
     ========================= */
 
-    function fecharModal() {
+    function closeProductModal() {
 
         if (!modal) return;
 
         modal.classList.remove("active");
 
-        document.body.style.overflow = "";
+        document.body.classList.remove("modal-open");
 
+        selectedProduct = null;
     }
-
 
     if (closeModal) {
 
         closeModal.addEventListener(
             "click",
-            fecharModal
+            closeProductModal
         );
 
     }
-
 
     if (overlay) {
 
         overlay.addEventListener(
             "click",
-            fecharModal
+            closeProductModal
         );
 
     }
 
+    document.addEventListener("keydown", (event) => {
 
-    /* =========================
-       FECHAR COM ESC
-    ========================= */
+        if (event.key === "Escape") {
 
-    document.addEventListener(
-        "keydown",
-        (event) => {
-
-            if (
-                event.key === "Escape" &&
-                modal &&
-                modal.classList.contains("active")
-            ) {
-
-                fecharModal();
-
-            }
+            closeProductModal();
 
         }
-    );
+
+    });
 
 
     /* =========================
@@ -360,168 +280,276 @@ document.addEventListener("DOMContentLoaded", () => {
 
         interestButton.addEventListener("click", () => {
 
+            if (!selectedProduct) return;
+
             const numeroWhatsApp =
                 "554199687027";
 
-
-            /* GERA LINK COMPLETO DA IMAGEM */
-
-            const linkImagem =
-                selectedProduct.image
-                    ? new URL(
-                        selectedProduct.image,
-                        window.location.href
-                    ).href
-                    : "";
-
-
-            /* MENSAGEM */
+            const imagemAbsoluta =
+                new URL(
+                    selectedProduct.image,
+                    window.location.href
+                ).href;
 
             const mensagem =
-                `Olá! ✨\n\n` +
-                `Tenho interesse nesta peça da GIORNNO Joias:\n\n` +
-                `💎 ${selectedProduct.name} — ${selectedProduct.ref}\n` +
-                `💰 ${selectedProduct.price}\n\n` +
-                `📸 Foto do produto:\n` +
-                `${linkImagem}\n\n` +
-                `💬 Gostaria de receber mais informações sobre disponibilidade e detalhes desta peça. 😊`;
-
-
-            /* ABRE WHATSAPP */
+                `Olá! Tenho interesse no produto ${selectedProduct.name} ` +
+                `(Ref.: ${selectedProduct.ref}), no valor de ${selectedProduct.price}. ` +
+                `Gostaria de saber mais informações.\n\n` +
+                `Imagem: ${imagemAbsoluta}`;
 
             const url =
                 `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
-
-            window.open(
-                url,
-                "_blank"
-            );
+            window.open(url, "_blank");
 
         });
 
     }
 
 
-  /* =========================
-   FILTRO DO CATÁLOGO
-========================= */
+    /* =========================
+       FILTRO
+    ========================= */
 
-const filterToggle =
-    document.getElementById("filterToggle");
+    const filterToggle =
+        document.getElementById("filterToggle");
 
-const filterMenu =
-    document.getElementById("filterMenu");
+    const filterMenu =
+        document.getElementById("filterMenu");
 
-const filterButtons =
-    document.querySelectorAll(".filter-option");
+    const productGrid =
+        document.querySelector(".product-grid");
+
+    const productCards =
+        document.querySelectorAll(".product-card");
+
+    const availabilityButtons =
+        document.querySelectorAll(".availability-option");
+
+    const sortButtons =
+        document.querySelectorAll(".sort-option");
+
+    let currentAvailability = "all";
+    let currentSort = "original";
 
 
-/* ABRIR E FECHAR MENU */
+    /* =========================
+       GUARDAR ORDEM ORIGINAL
+    ========================= */
 
-if (filterToggle && filterMenu) {
+    productCards.forEach((card, index) => {
 
-    filterToggle.addEventListener("click", (event) => {
-
-        event.stopPropagation();
-
-        filterMenu.classList.toggle("active");
+        card.dataset.originalIndex = index;
 
     });
 
-}
+
+    /* =========================
+       ABRIR / FECHAR FILTRO
+    ========================= */
+
+    if (filterToggle && filterMenu) {
+
+        filterToggle.addEventListener(
+            "click",
+            (event) => {
+
+                event.stopPropagation();
+
+                filterMenu.classList.toggle("show");
+
+                const isOpen =
+                    filterMenu.classList.contains("show");
+
+                filterToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
+
+            }
+        );
+
+    }
 
 
-/* FILTRAR PRODUTOS */
+    /* =========================
+       PEGAR PREÇO
+    ========================= */
 
-filterButtons.forEach((button) => {
+    function getPrice(card) {
 
-    button.addEventListener("click", (event) => {
+        const priceElement =
+            card.querySelector(".price");
 
-        event.stopPropagation();
+        if (!priceElement) {
+            return 0;
+        }
 
-        const filter = button.dataset.filter;
+        const priceText =
+            priceElement.textContent
+                .replace("R$", "")
+                .trim()
+                .replace(/\./g, "")
+                .replace(",", ".");
+
+        return parseFloat(priceText) || 0;
+    }
 
 
-        /* ATUALIZA A OPÇÃO ATIVA */
+    /* =========================
+       APLICAR FILTROS
+    ========================= */
 
-        filterButtons.forEach((btn) => {
+    function applyFilters() {
 
-            btn.classList.remove("active");
+        if (!productGrid) return;
+
+        const cardsArray =
+            Array.from(productCards);
+
+
+        /* FILTRO DE DISPONIBILIDADE */
+
+        const filteredCards =
+            cardsArray.filter((card) => {
+
+                if (currentAvailability === "available") {
+
+                    return !card.classList.contains("sold");
+
+                }
+
+                if (currentAvailability === "sold") {
+
+                    return card.classList.contains("sold");
+
+                }
+
+                return true;
+
+            });
+
+
+        /* ORDENAR */
+
+        filteredCards.sort((a, b) => {
+
+            if (currentSort === "price-low") {
+
+                return getPrice(a) - getPrice(b);
+
+            }
+
+            if (currentSort === "price-high") {
+
+                return getPrice(b) - getPrice(a);
+
+            }
+
+            return (
+                Number(a.dataset.originalIndex) -
+                Number(b.dataset.originalIndex)
+            );
 
         });
 
-        button.classList.add("active");
 
+        /* ESCONDER TODOS */
 
-        /* FILTRA OS PRODUTOS */
+        cardsArray.forEach((card) => {
 
-        cards.forEach((card) => {
-
-            const isSold =
-                card.classList.contains("sold");
-
-
-            if (filter === "all") {
-
-                card.classList.remove("hidden");
-
-            }
-
-            else if (
-                filter === "available" &&
-                !isSold
-            ) {
-
-                card.classList.remove("hidden");
-
-            }
-
-            else if (
-                filter === "sold" &&
-                isSold
-            ) {
-
-                card.classList.remove("hidden");
-
-            }
-
-            else {
-
-                card.classList.add("hidden");
-
-            }
+            card.classList.add("hidden");
 
         });
 
 
-        /* FECHA O MENU DEPOIS DE SELECIONAR */
+        /* MOSTRAR E REORDENAR */
 
-        if (filterMenu) {
+        filteredCards.forEach((card) => {
 
-            filterMenu.classList.remove("active");
+            card.classList.remove("hidden");
+
+            productGrid.appendChild(card);
+
+        });
+
+    }
+
+
+    /* =========================
+       BOTÕES DE DISPONIBILIDADE
+    ========================= */
+
+    availabilityButtons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            availabilityButtons.forEach((btn) => {
+
+                btn.classList.remove("active");
+
+            });
+
+            button.classList.add("active");
+
+            currentAvailability =
+                button.dataset.availability;
+
+            applyFilters();
+
+        });
+
+    });
+
+
+    /* =========================
+       BOTÕES DE ORDENAÇÃO
+    ========================= */
+
+    sortButtons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            sortButtons.forEach((btn) => {
+
+                btn.classList.remove("active");
+
+            });
+
+            button.classList.add("active");
+
+            currentSort =
+                button.dataset.sort;
+
+            applyFilters();
+
+        });
+
+    });
+
+
+    /* =========================
+       FECHAR FILTRO AO CLICAR FORA
+    ========================= */
+
+    document.addEventListener("click", (event) => {
+
+        if (
+            filterMenu &&
+            filterToggle &&
+            !filterMenu.contains(event.target) &&
+            !filterToggle.contains(event.target)
+        ) {
+
+            filterMenu.classList.remove("show");
+
+            filterToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
         }
 
     });
 
-});
-
-
-/* FECHA O MENU AO CLICAR FORA */
-
-document.addEventListener("click", (event) => {
-
-    if (
-        filterMenu &&
-        filterToggle &&
-        !filterMenu.contains(event.target) &&
-        !filterToggle.contains(event.target)
-    ) {
-
-        filterMenu.classList.remove("active");
-
-    }
-
-});
 });

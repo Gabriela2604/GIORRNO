@@ -17,7 +17,8 @@
 
     <link
         href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 
     <!-- Vercel Web Analytics -->
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
@@ -26,7 +27,9 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================= -->
 
     <header>
 
@@ -48,7 +51,9 @@
     </header>
 
 
-    <!-- TÍTULO DA CATEGORIA -->
+    <!-- =========================
+         TÍTULO DA CATEGORIA
+    ========================= -->
 
     <section class="catalog-header">
 
@@ -61,16 +66,23 @@
     </section>
 
 
-    <!-- FILTRO -->
+    <!-- =========================
+         FILTRO
+    ========================= -->
 
     <div class="catalog-filter-container">
 
         <button
             class="filter-icon"
             id="filterToggle"
-            aria-label="Filtrar produtos">
+            aria-label="Abrir filtros"
+            aria-expanded="false"
+        >
 
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
 
                 <line x1="4" y1="6" x2="20" y2="6"></line>
                 <circle cx="9" cy="6" r="1.5"></circle>
@@ -86,26 +98,84 @@
         </button>
 
 
+        <!-- MENU DO FILTRO -->
+
         <div class="filter-menu" id="filterMenu">
 
-            <button class="filter-option active" data-filter="all">
-                TODOS
-            </button>
+            <!-- DISPONIBILIDADE -->
 
-            <button class="filter-option" data-filter="available">
-                DISPONÍVEIS
-            </button>
+            <div class="filter-section">
 
-            <button class="filter-option" data-filter="sold">
-                INDISPONÍVEIS
-            </button>
+                <p class="filter-title">
+                    DISPONIBILIDADE
+                </p>
+
+                <button
+                    class="filter-option availability-option active"
+                    data-availability="all"
+                >
+                    TODOS
+                </button>
+
+                <button
+                    class="filter-option availability-option"
+                    data-availability="available"
+                >
+                    DISPONÍVEIS
+                </button>
+
+                <button
+                    class="filter-option availability-option"
+                    data-availability="sold"
+                >
+                    INDISPONÍVEIS
+                </button>
+
+            </div>
+
+
+            <div class="filter-divider"></div>
+
+
+            <!-- ORDENAÇÃO -->
+
+            <div class="filter-section">
+
+                <p class="filter-title">
+                    ORDENAR POR
+                </p>
+
+                <button
+                    class="filter-option sort-option active"
+                    data-sort="original"
+                >
+                    PADRÃO
+                </button>
+
+                <button
+                    class="filter-option sort-option"
+                    data-sort="price-low"
+                >
+                    MENOR PREÇO
+                </button>
+
+                <button
+                    class="filter-option sort-option"
+                    data-sort="price-high"
+                >
+                    MAIOR PREÇO
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
 
-    <!-- CATÁLOGO -->
+    <!-- =========================
+         CATÁLOGO
+    ========================= -->
 
     <main class="catalog">
 
@@ -117,18 +187,28 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-brincos/brinco1.jpg" alt="Brinco GIORNNO Ref. 001">
+
+                    <img
+                        src="../img-brincos/brinco1.jpg"
+                        alt="Brinco GIORNNO Ref. 1797"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 1797</p>
+                    <p class="product-code">
+                        Ref. 1797
+                    </p>
 
-                    <p class="price">R$ 99,90</p>
+                    <p class="price">
+                        R$ 99,90
+                    </p>
 
                 </div>
 
             </article>
+
 
             <!-- PRODUTO 3 -->
 
@@ -136,8 +216,10 @@
 
                 <div class="product-image">
 
-                    <img src="../img-brincos/brinco3.jpg"
-                         alt="Brinco GIORNNO Ref. 3442">
+                    <img
+                        src="../img-brincos/brinco3.jpg"
+                        alt="Brinco GIORNNO Ref. 3442"
+                    >
 
                     <div class="sold-overlay">
                         <span>INDISPONÍVEL</span>
@@ -147,9 +229,13 @@
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 3442</p>
+                    <p class="product-code">
+                        Ref. 3442
+                    </p>
 
-                    <p class="price">R$ 89,90</p>
+                    <p class="price">
+                        R$ 89,90
+                    </p>
 
                 </div>
 
@@ -161,14 +247,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-brincos/brinco4.jpg" alt="Brinco GIORNNO Ref. 004">
+
+                    <img
+                        src="../img-brincos/brinco4.jpg"
+                        alt="Brinco GIORNNO Ref. 3255"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 3255</p>
+                    <p class="product-code">
+                        Ref. 3255
+                    </p>
 
-                    <p class="price">R$ 129,90</p>
+                    <p class="price">
+                        R$ 129,90
+                    </p>
 
                 </div>
 
@@ -180,14 +275,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-brincos/brinco5.jpg" alt="Brinco GIORNNO Ref. 005">
+
+                    <img
+                        src="../img-brincos/brinco5.jpg"
+                        alt="Brinco GIORNNO Ref. 1978"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 1978</p>
+                    <p class="product-code">
+                        Ref. 1978
+                    </p>
 
-                    <p class="price">R$ 69,90</p>
+                    <p class="price">
+                        R$ 69,90
+                    </p>
 
                 </div>
 
@@ -199,14 +303,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-brincos/brinco6.jpg" alt="Brinco GIORNNO Ref. 006">
+
+                    <img
+                        src="../img-brincos/brinco6.jpg"
+                        alt="Brinco GIORNNO Ref. 2592"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 2592</p>
+                    <p class="product-code">
+                        Ref. 2592
+                    </p>
 
-                    <p class="price">R$ 159,90</p>
+                    <p class="price">
+                        R$ 159,90
+                    </p>
 
                 </div>
 
@@ -218,14 +331,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-brincos/brinco7.jpg" alt="Brinco GIORNNO Ref. 007">
+
+                    <img
+                        src="../img-brincos/brinco7.jpg"
+                        alt="Brinco GIORNNO Ref. 2019"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 2019</p>
+                    <p class="product-code">
+                        Ref. 2019
+                    </p>
 
-                    <p class="price">R$ 89,90</p>
+                    <p class="price">
+                        R$ 89,90
+                    </p>
 
                 </div>
 
@@ -237,14 +359,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-brincos/brinco8.jpg" alt="Brinco GIORNNO Ref. 008">
+
+                    <img
+                        src="../img-brincos/brinco8.jpg"
+                        alt="Brinco GIORNNO Ref. 3422"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 3422</p>
+                    <p class="product-code">
+                        Ref. 3422
+                    </p>
 
-                    <p class="price">R$ 99,90</p>
+                    <p class="price">
+                        R$ 99,90
+                    </p>
 
                 </div>
 
@@ -256,14 +387,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-brincos/brinco9.jpg" alt="Brinco GIORNNO Ref. 009">
+
+                    <img
+                        src="../img-brincos/brinco9.jpg"
+                        alt="Brinco GIORNNO Ref. 1781"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 1781</p>
+                    <p class="product-code">
+                        Ref. 1781
+                    </p>
 
-                    <p class="price">R$ 149,90</p>
+                    <p class="price">
+                        R$ 149,90
+                    </p>
 
                 </div>
 
@@ -275,83 +415,179 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-brincos/brinco10.jpg" alt="Brinco GIORNNO Ref. 010">
+
+                    <img
+                        src="../img-brincos/brinco10.jpg"
+                        alt="Brinco GIORNNO Ref. 1174"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 1174</p>
+                    <p class="product-code">
+                        Ref. 1174
+                    </p>
 
-                    <p class="price">R$ 69,90</p>
+                    <p class="price">
+                        R$ 69,90
+                    </p>
 
                 </div>
 
             </article>
 
 
-            <!-- PRODUTOS 11 ATÉ 23 -->
+            <!-- PRODUTO 11 -->
 
             <article class="product-card available">
+
                 <div class="product-image">
-                    <img src="../img-brincos/brinco11.jpg" alt="Brinco GIORNNO Ref. 011">
+
+                    <img
+                        src="../img-brincos/brinco11.jpg"
+                        alt="Brinco GIORNNO Ref. 2292"
+                    >
+
                 </div>
+
                 <div class="product-details">
-                    <p class="product-code">Ref. 2292</p>
-                    <p class="price">R$ 129,90</p>
+
+                    <p class="product-code">
+                        Ref. 2292
+                    </p>
+
+                    <p class="price">
+                        R$ 129,90
+                    </p>
+
                 </div>
+
             </article>
 
+
+            <!-- PRODUTO 12 -->
 
             <article class="product-card available">
+
                 <div class="product-image">
-                    <img src="../img-brincos/brinco12.jpg" alt="Brinco GIORNNO Ref. 012">
+
+                    <img
+                        src="../img-brincos/brinco12.jpg"
+                        alt="Brinco GIORNNO Ref. 2589"
+                    >
+
                 </div>
+
                 <div class="product-details">
-                    <p class="product-code">Ref. 2589</p>
-                    <p class="price">R$ 159,90</p>
+
+                    <p class="product-code">
+                        Ref. 2589
+                    </p>
+
+                    <p class="price">
+                        R$ 159,90
+                    </p>
+
                 </div>
+
             </article>
 
+
+            <!-- PRODUTO 13 -->
 
             <article class="product-card available">
+
                 <div class="product-image">
-                    <img src="../img-brincos/brinco13.jpg" alt="Brinco GIORNNO Ref. 013">
+
+                    <img
+                        src="../img-brincos/brinco13.jpg"
+                        alt="Brinco GIORNNO Ref. 3243"
+                    >
+
                 </div>
+
                 <div class="product-details">
-                    <p class="product-code">Ref. 3243</p>
-                    <p class="price">R$ 119,90</p>
+
+                    <p class="product-code">
+                        Ref. 3243
+                    </p>
+
+                    <p class="price">
+                        R$ 119,90
+                    </p>
+
                 </div>
+
             </article>
 
+
+            <!-- PRODUTO 14 -->
 
             <article class="product-card available">
+
                 <div class="product-image">
-                    <img src="../img-brincos/brinco14.jpg" alt="Brinco GIORNNO Ref. 014">
+
+                    <img
+                        src="../img-brincos/brinco14.jpg"
+                        alt="Brinco GIORNNO Ref. 2586"
+                    >
+
                 </div>
+
                 <div class="product-details">
-                    <p class="product-code">Ref. 2586</p>
-                    <p class="price">R$ 119,90</p>
+
+                    <p class="product-code">
+                        Ref. 2586
+                    </p>
+
+                    <p class="price">
+                        R$ 119,90
+                    </p>
+
                 </div>
+
             </article>
 
+
+            <!-- PRODUTO 15 -->
 
             <article class="product-card available">
+
                 <div class="product-image">
-                    <img src="../img-brincos/brinco15.jpg" alt="Brinco GIORNNO Ref. 015">
+
+                    <img
+                        src="../img-brincos/brinco15.jpg"
+                        alt="Brinco GIORNNO Ref. 1442"
+                    >
+
                 </div>
+
                 <div class="product-details">
-                    <p class="product-code">Ref. 1442</p>
-                    <p class="price">R$ 89,90</p>
+
+                    <p class="product-code">
+                        Ref. 1442
+                    </p>
+
+                    <p class="price">
+                        R$ 89,90
+                    </p>
+
                 </div>
+
             </article>
 
+
+            <!-- PRODUTO 16 -->
 
             <article class="product-card sold">
 
                 <div class="product-image">
 
-                    <img src="../img-brincos/brinco16.jpg"
-                         alt="Brinco GIORNNO Ref. 2512">
+                    <img
+                        src="../img-brincos/brinco16.jpg"
+                        alt="Brinco GIORNNO Ref. 2512"
+                    >
 
                     <div class="sold-overlay">
                         <span>INDISPONÍVEL</span>
@@ -361,65 +597,85 @@
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 2512</p>
+                    <p class="product-code">
+                        Ref. 2512
+                    </p>
 
-                    <p class="price">R$ 119,90</p>
+                    <p class="price">
+                        R$ 119,90
+                    </p>
 
                 </div>
 
             </article>
 
+
+            <!-- PRODUTO 17 -->
 
             <article class="product-card available">
+
                 <div class="product-image">
-                    <img src="../img-brincos/brinco17.jpg" alt="Brinco GIORNNO Ref. 017">
+
+                    <img
+                        src="../img-brincos/brinco17.jpg"
+                        alt="Brinco GIORNNO Ref. 2513"
+                    >
+
                 </div>
+
                 <div class="product-details">
-                    <p class="product-code">Ref. 2513</p>
-                    <p class="price">R$ 99,90</p>
+
+                    <p class="product-code">
+                        Ref. 2513
+                    </p>
+
+                    <p class="price">
+                        R$ 99,90
+                    </p>
+
                 </div>
+
             </article>
 
+
+            <!-- PRODUTO 18 -->
 
             <article class="product-card available">
-                <div class="product-image">
-                    <img src="../img-brincos/brinco18.jpg" alt="Brinco GIORNNO Ref. 018">
-                </div>
-                <div class="product-details">
-                    <p class="product-code">Ref. 3401</p>
-                    <p class="price">R$ 119,90</p>
-                </div>
-            </article>
-
-             <article class="product-card sold">
 
                 <div class="product-image">
 
-                    <img src="../img-brincos/brinco19.jpg"
-                         alt="Brinco GIORNNO Ref. 3415">
-
-                    <div class="sold-overlay">
-                        <span>INDISPONÍVEL</span>
-                    </div>
+                    <img
+                        src="../img-brincos/brinco18.jpg"
+                        alt="Brinco GIORNNO Ref. 3401"
+                    >
 
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 3415</p>
+                    <p class="product-code">
+                        Ref. 3401
+                    </p>
 
-                    <p class="price">R$ 59,90</p>
+                    <p class="price">
+                        R$ 119,90
+                    </p>
 
                 </div>
 
             </article>
+
+
+            <!-- PRODUTO 19 -->
 
             <article class="product-card sold">
 
                 <div class="product-image">
 
-                    <img src="../img-brincos/brinco20.jpg"
-                         alt="Brinco GIORNNO Ref. 1799">
+                    <img
+                        src="../img-brincos/brinco19.jpg"
+                        alt="Brinco GIORNNO Ref. 3415"
+                    >
 
                     <div class="sold-overlay">
                         <span>INDISPONÍVEL</span>
@@ -429,45 +685,132 @@
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 1799</p>
+                    <p class="product-code">
+                        Ref. 3415
+                    </p>
 
-                    <p class="price">R$ 89,90</p>
+                    <p class="price">
+                        R$ 59,90
+                    </p>
 
                 </div>
 
             </article>
 
 
-            <article class="product-card available">
+            <!-- PRODUTO 20 -->
+
+            <article class="product-card sold">
+
                 <div class="product-image">
-                    <img src="../img-brincos/brinco21.jpg" alt="Brinco GIORNNO Ref. 021">
+
+                    <img
+                        src="../img-brincos/brinco20.jpg"
+                        alt="Brinco GIORNNO Ref. 1799"
+                    >
+
+                    <div class="sold-overlay">
+                        <span>INDISPONÍVEL</span>
+                    </div>
+
                 </div>
+
                 <div class="product-details">
-                    <p class="product-code">Ref. 2223</p>
-                    <p class="price">R$ 169,90</p>
+
+                    <p class="product-code">
+                        Ref. 1799
+                    </p>
+
+                    <p class="price">
+                        R$ 89,90
+                    </p>
+
                 </div>
+
             </article>
 
 
+            <!-- PRODUTO 21 -->
+
             <article class="product-card available">
+
                 <div class="product-image">
-                    <img src="../img-brincos/brinco22.jpg" alt="Brinco GIORNNO Ref. 022">
+
+                    <img
+                        src="../img-brincos/brinco21.jpg"
+                        alt="Brinco GIORNNO Ref. 2223"
+                    >
+
                 </div>
+
                 <div class="product-details">
-                    <p class="product-code">Ref. 3439</p>
-                    <p class="price">R$ 89,90</p>
+
+                    <p class="product-code">
+                        Ref. 2223
+                    </p>
+
+                    <p class="price">
+                        R$ 169,90
+                    </p>
+
                 </div>
+
             </article>
 
 
+            <!-- PRODUTO 22 -->
+
             <article class="product-card available">
+
                 <div class="product-image">
-                    <img src="../img-brincos/brinco23.jpg" alt="Brinco GIORNNO Ref. 023">
+
+                    <img
+                        src="../img-brincos/brinco22.jpg"
+                        alt="Brinco GIORNNO Ref. 3439"
+                    >
+
                 </div>
+
                 <div class="product-details">
-                    <p class="product-code">Ref. 3428</p>
-                    <p class="price">R$ 69,90</p>
+
+                    <p class="product-code">
+                        Ref. 3439
+                    </p>
+
+                    <p class="price">
+                        R$ 89,90
+                    </p>
+
                 </div>
+
+            </article>
+
+
+            <!-- PRODUTO 23 -->
+
+            <article class="product-card available">
+
+                <div class="product-image">
+
+                    <img
+                        src="../img-brincos/brinco23.jpg"
+                        alt="Brinco GIORNNO Ref. 3428"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <p class="product-code">
+                        Ref. 3428
+                    </p>
+
+                    <p class="price">
+                        R$ 69,90
+                    </p>
+
+                </div>
+
             </article>
 
 
@@ -476,14 +819,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-piercing/piercing.jpeg" alt="Piercing GIORNNO Ref. 024">
+
+                    <img
+                        src="../img-piercing/piercing.jpeg"
+                        alt="Piercing GIORNNO Ref. 2783"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 2783</p>
+                    <p class="product-code">
+                        Ref. 2783
+                    </p>
 
-                    <p class="price">R$ 59,90</p>
+                    <p class="price">
+                        R$ 59,90
+                    </p>
 
                 </div>
 
@@ -495,14 +847,23 @@
             <article class="product-card available">
 
                 <div class="product-image">
-                    <img src="../img-piercing/piercing2.jpg" alt="Piercing GIORNNO Ref. 025">
+
+                    <img
+                        src="../img-piercing/piercing2.jpg"
+                        alt="Piercing GIORNNO Ref. 3227"
+                    >
+
                 </div>
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 3227</p>
+                    <p class="product-code">
+                        Ref. 3227
+                    </p>
 
-                    <p class="price">R$ 89,90</p>
+                    <p class="price">
+                        R$ 89,90
+                    </p>
 
                 </div>
 
@@ -512,12 +873,15 @@
             <!-- EXEMPLO DE PRODUTO INDISPONÍVEL -->
 
             <!--
+
             <article class="product-card sold">
 
                 <div class="product-image">
 
-                    <img src="../img-brincos/brinco26.jpg"
-                         alt="Brinco GIORNNO Ref. 026">
+                    <img
+                        src="../img-brincos/brinco26.jpg"
+                        alt="Brinco GIORNNO Ref. 026"
+                    >
 
                     <div class="sold-overlay">
                         <span>INDISPONÍVEL</span>
@@ -527,13 +891,18 @@
 
                 <div class="product-details">
 
-                    <p class="product-code">Ref. 026</p>
+                    <p class="product-code">
+                        Ref. 026
+                    </p>
 
-                    <p class="price">R$ 259,90</p>
+                    <p class="price">
+                        R$ 259,90
+                    </p>
 
                 </div>
 
             </article>
+
             -->
 
         </div>
@@ -541,7 +910,9 @@
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
@@ -549,7 +920,10 @@
 
             <div class="footer-logo">
 
-                <img src="../img/logo1.png" alt="GIORNNO Joias">
+                <img
+                    src="../img/logo1.png"
+                    alt="GIORNNO Joias"
+                >
 
             </div>
 
@@ -568,9 +942,14 @@
     </footer>
 
 
-    <!-- MODAL DO PRODUTO -->
+    <!-- =========================
+         MODAL DO PRODUTO
+    ========================= -->
 
-    <div class="product-modal" id="productModal">
+    <div
+        class="product-modal"
+        id="productModal"
+    >
 
         <div class="modal-overlay"></div>
 
@@ -579,22 +958,26 @@
             <button
                 class="modal-close"
                 id="modalClose"
-                aria-label="Fechar">
-
+                aria-label="Fechar"
+            >
                 ×
-
             </button>
 
+
+            <!-- IMAGEM -->
 
             <div class="modal-image">
 
                 <img
                     id="modalProductImage"
                     src=""
-                    alt="">
+                    alt=""
+                >
 
             </div>
 
+
+            <!-- INFORMAÇÕES -->
 
             <div class="modal-info">
 
@@ -608,29 +991,26 @@
 
                 <p
                     class="modal-ref"
-                    id="modalProductRef">
-                </p>
+                    id="modalProductRef"
+                ></p>
 
                 <p
                     class="modal-price"
-                    id="modalProductPrice">
-                </p>
+                    id="modalProductPrice"
+                ></p>
 
                 <div class="modal-divider"></div>
 
                 <p class="modal-description">
-
                     Gostou desta peça? Entre em contato conosco
                     para mais informações.
-
                 </p>
 
                 <button
                     class="interest-button"
-                    id="interestButton">
-
+                    id="interestButton"
+                >
                     MANIFESTAR INTERESSE
-
                 </button>
 
             </div>
@@ -640,7 +1020,9 @@
     </div>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script src="../js/script.js"></script>
 
